@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- General -->
+  <string name="app_name">لوميا</string>
+  <string name="ok">حسناً</string>
+  <string name="yes">آه</string>
+  <string name="no">لا</string>
+  <string name="cancel">ألغي</string>
+  <string name="save">احفظ</string>
+  <string name="back">ارجع</string>
+  <string name="done">خلصت</string>
+  <string name="close">سكّر</string>
+  <string name="confirm">أكد</string>
+  <string name="delete">امسح</string>
+  <string name="edit">عدّل</string>
+  <string name="loading">يحمّل...</string>
+  <string name="error">صرالك غلطة</string>
+  <string name="retry">عاود</string>
+  <string name="submit">سجّل</string>
+  <string name="continue_btn">كمّل</string>
+  <string name="other">أخرى</string>
+  <string name="on_site">في الصالون</string>
+  <string name="card">بطاقة</string>
+  <string name="notes">ملاحظات</string>
+
+  <!-- Language selection -->
+  <string name="choose_language">اختار لغتك</string>
+  <string name="lang_english">الإنجليزية</string>
+  <string name="lang_french">الفرنسية</string>
+  <string name="lang_darija">الدارجة التونسية</string>
+  <string name="lang_subtitle">تنجم تبدّلها بعد من البروفيل متاعك</string>
+
+  <!-- Auth -->
+  <string name="sign_in">ادخل</string>
+  <string name="sign_up">سجّل</string>
+  <string name="sign_out">اخرج</string>
+  <string name="email">إيميل</string>
+  <string name="password">كلمة السر</string>
+  <string name="confirm_password">أكد كلمة السر</string>
+  <string name="full_name">الاسم الكامل</string>
+  <string name="phone">تيليفون</string>
+  <string name="forgot_password">نسيت كلمة السر؟</string>
+  <string name="create_account">عمل حساب</string>
+  <string name="already_have_account">عندك حساب؟</string>
+  <string name="dont_have_account">ما عندكش حساب؟</string>
+  <string name="welcome_back">مرحبا بيك</string>
+  <string name="or">ولا</string>
+  <string name="i_am_salon_owner">أنا صاحب صالون</string>
+  <string name="i_am_client">أنا عميل</string>
+  <string name="register_as">سجّل بصفتك</string>
+
+  <!-- Biometric -->
+  <string name="biometric_sign_in">دخول بالبصمة</string>
+  <string name="sign_in_with_biometric">ادخل بالبصمة ولاّ Face ID</string>
+  <string name="biometric_reason">صادق باش تدخل لـ Loomea</string>
+  <string name="biometric_sign_in_title">دخول بالبصمة</string>
+  <string name="biometric_enable_title">تحب تفعّل الدخول بالبصمة؟</string>
+  <string name="biometric_enable_desc">ماعادش تكتب الـ password. استعمل البصمة ولاّ Face ID باش تدخل بسرعة.</string>
+  <string name="biometric_enable_reason">أكّد باش تفعّل الدخول بالبصمة</string>
+  <string name="biometric_need_relogin">ادخل بالـ password الأول، من بعد تنجّم تفعّل البصمة.</string>
+  <string name="not_now">موش توّا</string>
+  <string name="enable">فعّل</string>
+
+  <!-- Navigation tabs -->
+  <string name="tab_home">الدار</string>
+  <string name="tab_search">دوّر</string>
+  <string name="tab_bookings">الحجوزات</string>
+  <string name="tab_profile">الحساب</string>
+  <string name="tab_dashboard">لوحة التحكم</string>
+  <string name="tab_my_salon">صالوني</string>
+  <string name="tab_schedule">المواعيد</string>
+
+  <!-- Home screen -->
+  <string name="featured_salons">صالونات مميزة</string>
+  <string name="near_you">قريب منك</string>
+  <string name="top_rated">الأحسن تقييماً</string>
+  <string name="explore_map">اكتشف الخريطة</string>
+  <string name="see_all">شوف الكل</string>
+  <string name="good_morning">صباح الخير</string>
+  <string name="good_afternoon">مساء الخير</string>
+  <string name="good_evening">مساء النور</string>
+  <string name="discover_salons">اكتشف الصالونات القريبة منك</string>
+  <string name="open_map">افتح الخريطة</string>
+  <string name="salons_nearby">صالونات قريبة</string>
+  <string name="you">أنتَ</string>
+  <string name="glow_up_time">وقت التجميل، {0}!</string>
+  <string name="explore_nearby">اكتشف القريب</string>
+
+  <!-- Search -->
+  <string name="search">دوّر</string>
+  <string name="search_hint">دوّر على صالون أو خدمة...</string>
+  <string name="no_results">ما لقيناش شي</string>
+  <string name="popular_salons">صالونات مشهورة</string>
+  <string name="search_results">نتائج البحث</string>
+
+  <!-- Map / Explore -->
+  <string name="explore">اكتشف</string>
+  <string name="my_location">موقعي</string>
+  <string name="search_places">دوّر على مكان...</string>
+  <string name="no_salons_area">ما فيش صالونات في هذه المنطقة</string>
+  <string name="geocoding_error">ما لقيناش المكان</string>
+
+  <!-- Salon profile -->
+  <string name="services">الخدمات</string>
+  <string name="portfolio">الأعمال</string>
+  <string name="reviews">التقييمات</string>
+  <string name="book_now">احجز تو</string>
+  <string name="write_review">اكتب تقييم</string>
+  <string name="your_rating">تقييمك</string>
+  <string name="share_experience">شارك تجربتك (اختياري)</string>
+  <string name="no_services">ما فيش خدمات</string>
+  <string name="no_portfolio">ما فيش أعمال بعد</string>
+  <string name="no_reviews">ما فيش تقييمات بعد</string>
+  <string name="add_to_booking">زيد</string>
+  <string name="remove_from_booking">حيّد</string>
+  <string name="review_deleted">التقييم تمسح</string>
+  <string name="min">دقيقة</string>
+  <string name="rating">التقييم</string>
+
+  <!-- Booking flow -->
+  <string name="select_time_slot">اختار الوقت</string>
+  <string name="available_slots">الأوقات المتاحة</string>
+  <string name="no_slots_available">ما فيش أوقات متاحة في هذا اليوم</string>
+  <string name="booking_review">راجع الحجز</string>
+  <string name="booking_confirmed">تبعثت الطلبة!</string>
+  <string name="booking_submitted_msg">طلبة الموعد متاعك تبعثت. الصالون يأكدلك قريباً.</string>
+  <string name="total_price">المجموع</string>
+  <string name="payment_method">طريقة الدفع</string>
+  <string name="pay_at_salon">تخلص في الصالون</string>
+  <string name="pay_with_card">تخلص ببطاقة</string>
+  <string name="selected_services">الخدمات اللي اخترتهم</string>
+  <string name="select_date">اختار التاريخ</string>
+  <string name="book_appointment">احجز الموعد</string>
+  <string name="reschedule_appointment">بدّل الوقت</string>
+  <string name="go_to_bookings">شوف حجوزاتي</string>
+  <string name="back_home">ارجع للدار</string>
+
+  <!-- My Appointments (client) -->
+  <string name="my_appointments">مواعيدي</string>
+  <string name="my_bookings">حجوزاتي</string>
+  <string name="upcoming">الجايين</string>
+  <string name="past">اللي فاتوا</string>
+  <string name="waitlist">قائمة الانتظار</string>
+  <string name="reschedule">بدّل الوقت</string>
+  <string name="book_again">احجز مرة أخرى</string>
+  <string name="cancel_appointment">ألغي الموعد</string>
+  <string name="cancel_appointment_confirm">واثق تلغي الموعد مع {0}؟</string>
+  <string name="keep">خلّيه</string>
+  <string name="appointment_cancelled">الموعد مع {0} تلغى</string>
+  <string name="browse_salons">شوف الصالونات</string>
+  <string name="book_next_session">احجز جلسة التجميل القادمة</string>
+  <string name="no_upcoming_appointments">ما عندكش مواعيد جاية</string>
+  <string name="no_past_appointments">ما عندكش مواعيد فاتت</string>
+
+  <!-- Appointment status -->
+  <string name="status_pending">في الانتظار</string>
+  <string name="status_confirmed">مأكد</string>
+  <string name="status_cancelled">ملغى</string>
+  <string name="status_completed">منجّز</string>
+  <string name="status_no_show">ما جاش</string>
+  <string name="waiting_for_confirmation">في انتظار تأكيد الصالون</string>
+
+  <!-- Attendance confirmation -->
+  <string name="attendance_required">لازم تأكد حضورك</string>
+  <string name="attendance_message">أكد حضورك وإلا الحجز يتلغى تلقائياً.</string>
+  <string name="confirm_attendance">أكد الحضور</string>
+
+  <!-- Waitlist -->
+  <string name="no_waitlist">ما عندكش قائمة انتظار</string>
+  <string name="no_waitlist_desc">كي يكون اليوم محجوز الكامل، دخل قائمة الانتظار ونبعثولك لما يفضى وقت.</string>
+  <string name="slot_opened">فيه وقت فاض — احجز تو!</string>
+  <string name="leave_waitlist">اخرج</string>
+  <string name="book">احجز</string>
+
+  <!-- Owner – Bookings -->
+  <string name="bookings">الحجوزات</string>
+  <string name="schedule">المواعيد</string>
+  <string name="all">الكل</string>
+  <string name="no_bookings_found">ما لقيناش حجوزات</string>
+  <string name="confirm_booking">أكد</string>
+  <string name="complete_booking">أتمّ</string>
+  <string name="reject_booking">ارفض</string>
+  <string name="cancel_booking">ألغي</string>
+  <string name="reason_for_rejection">علاش ترفض؟</string>
+  <string name="rejection_affects_score">هذا يأثر على نقاط العميل.</string>
+  <string name="double_booking">حجز مزدوج</string>
+  <string name="no_availability">ما فيش وقت</string>
+  <string name="service_unavailable">الخدمة مش متاحة</string>
+  <string name="client_reliability">مشاكل في موثوقية العميل</string>
+
+  <!-- Owner – Dashboard -->
+  <string name="dashboard">لوحة التحكم</string>
+  <string name="today">اليوم</string>
+  <string name="this_month">هذا الشهر</string>
+  <string name="revenue">الدخل</string>
+  <string name="total_bookings">مجموع الحجوزات</string>
+  <string name="pending_bookings">في الانتظار</string>
+  <string name="confirmed_bookings">المأكدة</string>
+  <string name="completed_bookings">المنجزة</string>
+  <string name="no_show">ما جاش</string>
+  <string name="monthly_revenue">دخل الشهر</string>
+  <string name="todays_revenue">دخل اليوم</string>
+  <string name="recent_bookings">الحجوزات الأخيرة</string>
+  <string name="no_data_yet">ما فيش بيانات بعد</string>
+  <string name="monthly">الشهري</string>
+  <string name="todays_schedule">مواعيد اليوم</string>
+  <string name="no_appointments_today">ما فيش مواعيد اليوم</string>
+  <string name="schedule_clear">اليوم ما عندكش حاجة</string>
+  <string name="owner_greeting">أهلا، {0}.</string>
+
+  <!-- Owner – My Salon -->
+  <string name="my_salon">صالوني</string>
+  <string name="salon_label">الصالون</string>
+  <string name="add_service">زيد خدمة</string>
+  <string name="add_post">زيد صورة</string>
+  <string name="edit_salon">عدّل الصالون</string>
+  <string name="salon_name">اسم الصالون</string>
+  <string name="description">وصف</string>
+  <string name="address">العنوان</string>
+  <string name="category">الفئة</string>
+  <string name="no_salon">ما عندكش صالون بعد</string>
+  <string name="create_salon">عمل صالونك</string>
+  <string name="service_name">اسم الخدمة</string>
+  <string name="service_price">الثمن</string>
+  <string name="service_duration">المدة (دقيقة)</string>
+  <string name="delete_service">امسح الخدمة</string>
+  <string name="delete_post">امسح الصورة</string>
+  <string name="post_caption">شرح (اختياري)</string>
+  <string name="working_hours">أوقات العمل</string>
+
+  <!-- Profile (client) -->
+  <string name="profile">الحساب</string>
+  <string name="account">الحساب</string>
+  <string name="edit_profile">عدّل الحساب</string>
+  <string name="saved_salons">الصالونات المحفوظة</string>
+  <string name="notifications">الإشعارات</string>
+  <string name="payment_methods">طرق الدفع</string>
+  <string name="delete_account">احذف الحساب</string>
+  <string name="location">الموقع</string>
+  <string name="no_saved_salons">ما عندكش صالونات محفوظة</string>
+  <string name="profile_updated">تحديث الحساب نجح</string>
+  <string name="sign_out_confirm">واثق تخرج؟</string>
+  <string name="delete_account_confirm">هذا يمسح حسابك نهائياً. واثق؟</string>
+  <string name="favorite_salons">الصالونات المفضلة</string>
+  <string name="help_center">مركز المساعدة</string>
+  <string name="cancel_account_deletion">ألغي حذف الحساب</string>
+  <string name="pending_deletion_msg">حسابك يتحذف خلال {0} يوم.</string>
+  <string name="schedule_deletion">برمج الحذف</string>
+  <string name="delete_account_desc">حسابك يتحذف خلال 30 يوم. تنجم تلغي في أي وقت.
+
+اكتب "delete" باش تأكد:</string>
+  <string name="help_center_content">أهلا بيك في مركز مساعدة لوميا!
+
+كيفاش تحجز موعد
+دوّر على صالون من الصفحة الرئيسية أو ابحث باسمه. اختار الخدمات اللي تحبها، اختار وقت، وأكد الحجز.
+
+إدارة المواعيد
+شوف مواعيدك الجايين واللي فاتوا في تاب المواعيد. تنجم تبدّل أو تلغي منهم مباشرة.
+
+الصالونات المفضلة
+اضغط على القلب على أي صالون باش تحفظه في المفضلة.
+
+طرق الدفع
+زيد وسيّر طرق الدفع متاعك من الحساب.
+
+محتاج مساعدة؟
+تواصل معانا على support@loomea.app</string>
+  <string name="terms_of_service_content">آخر تحديث: مارس 2026
+
+1. قبول الشروط
+باستعمالك لتطبيق لوميا، توافق على هذه الشروط.
+
+2. استخدام الخدمة
+لوميا تربط بين المستخدمين والصالونات. توافق على استخدام الخدمة بطريقة قانونية فقط.
+
+3. الحجوزات والإلغاء
+ينجم تلغي الموعد 24 ساعة قبله. الإلغاء المتأخر ممكن يكون فيه رسوم.
+
+4. الحسابات
+أنت مسؤول على سرية بيانات الدخول متاعك.
+
+5. حدود المسؤولية
+لوميا وسيط وما هيش مسؤولة على جودة خدمات الصالونات.
+
+6. التعديلات
+نحتفظ بالحق في تعديل هذه الشروط في أي وقت.</string>
+  <string name="privacy_policy_content">آخر تحديث: مارس 2026
+
+1. المعلومات اللي نجمعوها
+نجمعوا المعلومات اللي تعطيهالنا مباشرة: اسمك، إيميلك، تيليفونك، وتفاصيل الدفع.
+
+2. كيفاش نستعملوا معلوماتك
+معلوماتك تتستعمل باش نوفروا الخدمة، نسيّروا الحجوزات، ونبعثولك إشعارات.
+
+3. مشاركة البيانات
+نشاركوا تفاصيل حجزك مع الصالون المعني. ما نبيعوش بياناتك.
+
+4. الأمان
+نطبقوا إجراءات أمنية مناسبة لحماية معلوماتك.
+
+5. حقوقك
+تنجم تشوف، تعدّل، أو تمسح بياناتك من إعدادات التطبيق.
+
+6. التواصل
+لأي سؤال متعلق بالخصوصية: privacy@loomea.app</string>
+
+  <!-- Reliability -->
+  <string name="trusted">موثوق</string>
+  <string name="normal">عادي</string>
+  <string name="risky">خطير</string>
+  <string name="restricted">محدود</string>
+  <string name="reliability_score">نقاط الموثوقية</string>
+  <string name="reliability_risky_msg">نقاط الموثوقية متاعك منخفضة بسبب مواعيد ضيّعتها. لازم تأكد حضورك للحجوزات الجديدة.</string>
+  <string name="reliability_restricted_msg">الوصول للحجز محدود بسبب مواعيد ضيّعتها. حضّر المواعيد الموجودة باش ترجع للوضع العادي.</string>
+  <string name="tier_trusted_desc">ما فيش قيود. كمّل في مواعيدك!</string>
+  <string name="tier_normal_desc">حجز عادي. حاول ما تلغيش متأخر باش تحافظ على نقاطك.</string>
+  <string name="tier_risky_desc">لازم تأكد الحضور قبل المواعيد. الحد الأقصى حجزين نشطين.</string>
+  <string name="tier_restricted_desc">الوصول للحجز محدود. حضّر مواعيدك الحالية باش ترجع.</string>
+  <string name="reliability_score_rule">النقاط: +2 لكل موعد منجز، +5 مكافأة تسلسل (كل 3)، -10 إلغاء متأخر، -20 غياب، +1 كل 7 أيام.</string>
+
+  <!-- Days and months -->
+  <string name="day_1">الإثنين</string>
+  <string name="day_2">الثلاثاء</string>
+  <string name="day_3">الأربعاء</string>
+  <string name="day_4">الخميس</string>
+  <string name="day_5">الجمعة</string>
+  <string name="day_6">السبت</string>
+  <string name="day_7">الأحد</string>
+  <string name="month_1">جانفي</string>
+  <string name="month_2">فيفري</string>
+  <string name="month_3">مارس</string>
+  <string name="month_4">أفريل</string>
+  <string name="month_5">ماي</string>
+  <string name="month_6">جوان</string>
+  <string name="month_7">جويلية</string>
+  <string name="month_8">أوت</string>
+  <string name="month_9">سبتمبر</string>
+  <string name="month_10">أكتوبر</string>
+  <string name="month_11">نوفمبر</string>
+  <string name="month_12">ديسمبر</string>
+
+  <!-- Onboarding -->
+  <string name="get_started">ابدا</string>
+  <string name="skip">تجاوز</string>
+  <string name="next">التالي</string>
+  <string name="onboarding_title_1">اكتشف الصالونات الأحسن</string>
+  <string name="onboarding_desc_1">لقي الصالونات الأحسن قريب منك مع تقييمات حقيقية.</string>
+  <string name="onboarding_title_2">احجز في ثوان</string>
+  <string name="onboarding_desc_2">اختار الخدمة، الوقت، وأكد في ثوان.</string>
+  <string name="onboarding_title_3">تابع كل شي</string>
+  <string name="onboarding_desc_3">سيّر مواعيدك، اقبل التذكيرات وما تفوّتش حصة.</string>
+
+  <!-- Owner onboarding -->
+  <string name="setup_salon">عمل صالونك</string>
+  <string name="salon_setup_desc">حكيلنا على صالونك باش تبدا تقبل حجوزات.</string>
+  <string name="pick_location">اختار الموقع من الخريطة</string>
+  <string name="create_salon_btn">عمل الصالون</string>
+  <string name="add_services_later">تنجم تزيد خدمات بعد ما تعمل الصالون.</string>
+
+  <!-- Permissions -->
+  <string name="perm_location_title">لقي صالونات قريبة منك</string>
+  <string name="perm_location_desc">اسمح للتطبيق بالوصول لموقعك باش نوريك الصالونات الأقرب إليك.</string>
+  <string name="perm_notifications_title">ابقَ على اطلاع</string>
+  <string name="perm_notifications_desc">احصل على إشعارات لما يتأكد حجزك، يتلغى، أو لما يفضى وقت في قائمة الانتظار.</string>
+  <string name="allow">اسمح</string>
+  <string name="skip_for_now">تجاوز</string>
+  <string name="step_of">الخطوة {0} من {1}</string>
+  <string name="price_amount">{0} د.ت</string>
+  <string name="select_time_to_continue">اختار وقت باش تكمّل</string>
+  <string name="permissions_title">إعداد سريع</string>
+
+  <!-- Auth extras -->
+  <string name="not_set">غير محدد</string>
+  <string name="log_out">اخرج</string>
+  <string name="help_support">المساعدة والدعم</string>
+  <string name="terms_of_service">شروط الاستخدام</string>
+  <string name="privacy_policy">سياسة الخصوصية</string>
+  <string name="preferences">التفضيلات</string>
+  <string name="support">الدعم</string>
+  <string name="verify_email">أكد الإيمايل</string>
+  <string name="enter_email_otp">أدخل الكود ذو 6 أرقام المرسل إلى</string>
+  <string name="resend_code">أعد إرسال الكود</string>
+  <string name="verify">أكد</string>
+  <string name="check_spam_folder">ما وصلكش؟ تفقّد مجلد السبام</string>
+
+  <!-- Booking extras -->
+  <string name="duration">المدة</string>
+  <string name="price">الثمن</string>
+  <string name="salon">الصالون</string>
+  <string name="date">التاريخ</string>
+  <string name="time">الوقت</string>
+  <string name="add_notes">زيد ملاحظات (اختياري)</string>
+  <string name="booking_details">تفاصيل الحجز</string>
+  <string name="no_notifications">ما فيش إشعارات</string>
+  <string name="mark_all_read">علّم الكل كمقروء</string>
+  <string name="today_label">اليوم</string>
+  <string name="earlier">سابقاً</string>
+  <string name="no_saved_yet">ما عندكش صالونات محفوظة</string>
+  <string name="showcase_work">وري أحسن أعمالك</string>
+  <string name="client_reviews">تقييمات العملاء تظهر هنا</string>
+  <string name="open_in_maps">افتح في الخريطة</string>
+  <string name="select_services">اختار الخدمات</string>
+  <string name="no_slots_day">ما فيش أوقات متاحة في هذا اليوم</string>
+  <string name="select_payment">اختار طريقة الدفع</string>
+  <string name="confirm_booking_title">أكد الحجز</string>
+  <string name="add_to_cart">زيد</string>
+  <string name="remove">حيّد</string>
+  <string name="salon_closed">الصالون مسكر في هذا اليوم</string>
+  <string name="free">مجاني</string>
+  <string name="join_waitlist">انضم لقائمة الانتظار</string>
+  <string name="waitlist_full_msg">هذا اليوم محجوز الكامل. انضم لقائمة الانتظار ونبعثولك لما يفضى وقت.</string>
+
+  <!-- Booking – slot picker -->
+  <string name="n_service_selected">{0} خدمة محددة</string>
+  <string name="n_services_selected">{0} خدمات محددة</string>
+  <string name="select_at_least_one_service">اختار خدمة على الأقل</string>
+  <string name="total">المجموع</string>
+  <string name="pick_a_day">اختار يوم.</string>
+  <string name="n_selected_services">{0} خدمات مختارة</string>
+  <string name="no_services_selected">ما اخترتش خدمات</string>
+  <string name="select_date_to_see_times">اختار تاريخ باش تشوف الأوقات المتاحة</string>
+  <string name="available_time_slots">الأوقات المتاحة</string>
+  <string name="slot_selected">محدد</string>
+  <string name="slot_booked">محجوز</string>
+  <string name="slot_limited">محدود</string>
+  <string name="slot_available">متاح</string>
+  <string name="confirm_reschedule">أكد التغيير</string>
+  <string name="confirm_time">أكد الوقت</string>
+  <string name="on_waitlist">في قائمة الانتظار</string>
+
+  <!-- Booking – review -->
+  <string name="review">مراجعة</string>
+  <string name="almost_there">قريب تخلص.</string>
+  <string name="special_requests_hint">عندك طلبات خاصة؟</string>
+  <string name="cancellation_policy">إلغاء مجاني حتى ساعتين قبل موعدك. الإلغاء المتأخر أو الغياب قد يكون فيه رسوم حسب سياسة الصالون.</string>
+
+  <!-- Booking – confirmation -->
+  <string name="booking_submitted">تبعثت الحجزة</string>
+  <string name="your_chair_is_held">كرسيك محجوز.</string>
+  <string name="minutes_duration">{0} دقيقة</string>
+  <string name="date_and_time">التاريخ والوقت</string>
+  <string name="paid">مدفوع</string>
+  <string name="added_to_calendar_title">تزيد للتقويم ✓</string>
+  <string name="calendar_saved_msg">الموعد متاعك تحفظ في التقويم.</string>
+  <string name="added_to_calendar">تزيد للتقويم</string>
+  <string name="add_to_calendar">زيد للتقويم</string>
+  <string name="set_reminder">حط تنبيه</string>
+
+  <!-- Calendar / Date abbreviations -->
+  <string name="day_abbr_1">إث</string>
+  <string name="day_abbr_2">ثل</string>
+  <string name="day_abbr_3">أر</string>
+  <string name="day_abbr_4">خم</string>
+  <string name="day_abbr_5">جم</string>
+  <string name="day_abbr_6">سب</string>
+  <string name="day_abbr_7">أح</string>
+  <string name="month_abbr_1">جان</string>
+  <string name="month_abbr_2">فيف</string>
+  <string name="month_abbr_3">مار</string>
+  <string name="month_abbr_4">أفر</string>
+  <string name="month_abbr_5">ماي</string>
+  <string name="month_abbr_6">جوا</string>
+  <string name="month_abbr_7">جوي</string>
+  <string name="month_abbr_8">أوت</string>
+  <string name="month_abbr_9">سبت</string>
+  <string name="month_abbr_10">أكت</string>
+  <string name="month_abbr_11">نوف</string>
+  <string name="month_abbr_12">ديس</string>
+
+  <!-- Password reset -->
+  <string name="recover_account">استرجع حسابك</string>
+  <string name="enter_phone_or_email">رقم التيليفون ولا الإيميل</string>
+  <string name="enter_email_to_reset">أدخل عنوان بريدك الإلكتروني وبنبعثولك رابط باش تبدّل كلمة السر.</string>
+  <string name="send_me_a_code">ابعثلي كود</string>
+  <string name="send_me_a_link">ابعثلي رابط</string>
+  <string name="check_your_messages">شوف رسائلك</string>
+  <string name="code_sent_to">بعثنالك كود من 6 أرقام على</string>
+  <string name="wrong_number">رقم غلط؟</string>
+  <string name="otp_attempts_left">{0} محاولات باقيين</string>
+  <string name="otp_last_attempt">آخر محاولة — انتبه</string>
+  <string name="otp_locked_out">الكود متقفّل. اطلب كود جديد.</string>
+  <string name="code_expired_msg">الكود انتهى. اطلب واحد جديد.</string>
+  <string name="otp_code_resent">كود جديد تبعث!</string>
+  <string name="check_inbox">شوف البريد الوارد</string>
+  <string name="link_sent_to">بعثنالك رابط تصفير على</string>
+  <string name="link_expires_15min">الرابط ينتهي في 15 دقيقة.</string>
+  <string name="open_mail_app">افتح تطبيق الميل</string>
+  <string name="nothing_in_inbox">ما وصلكش؟ عاود الإرسال</string>
+  <string name="link_expired_title">الرابط انتهى</string>
+  <string name="link_expired_desc">رابط التصفير انتهى. ابدأ من الأول.</string>
+  <string name="new_password_title">كلمة سر جديدة</string>
+  <string name="make_it_memorable">اختار شيء آمن.</string>
+  <string name="save_password">احفظ كلمة السر</string>
+  <string name="strength_too_short">قصيرة برشا</string>
+  <string name="req_different_from_current">لازم تكون مختلفة على القديمة</string>
+  <string name="secured_encryption">محمية بتشفير كامل</string>
+  <string name="youre_back">رجعت!</string>
+  <string name="password_updated_msg">تم تحديث كلمة السر. ادخل لتكمّل.</string>
+  <string name="back_to_sign_in">ارجع لصفحة الدخول</string>
+  <string name="rate_limited_title">محاولات كثيرة</string>
+  <string name="rate_limited_desc">حاولت أكثر مما يجب. استنى 10 دقائق وعاود.</string>
+  <string name="how_recover">كيفاش تحب ترجع؟</string>
+  <string name="text_me_code">ابعثلي كود بالرسالة</string>
+  <string name="email_me_link">ابعثلي رابط بالإيميل</string>
+  <string name="something_went_wrong">صرالك غلطة. عاود من الأول.</string>
+
+  <!-- Sign in / Sign up -->
+  <string name="sign_in_subtitle">أدخل بياناتك لمتابعة.</string>
+  <string name="invalid_credentials">الإيميل أو كلمة السر غلط</string>
+  <string name="email_required">الإيميل مطلوب</string>
+  <string name="email_invalid">أدخل إيميل صحيح</string>
+  <string name="password_required">كلمة السر مطلوبة</string>
+  <string name="password_too_short_6">كلمة السر لازم تكون 6 أحرف على الأقل</string>
+  <string name="new_here">جديد هنا؟</string>
+  <string name="join_tagline">انضم لـ looki.</string>
+  <string name="enter_details">أدخل بياناتك للبدء.</string>
+  <string name="registration_failed">فشل التسجيل. عاود مرة أخرى.</string>
+  <string name="by_signing_up">بالتسجيل، توافق على</string>
+  <string name="and">و</string>
+  <string name="role_client">عميل</string>
+  <string name="role_salon_owner">صاحب صالون</string>
+  <string name="create_password_hint">عمل كلمة سر</string>
+  <string name="full_name_required">الاسم الكامل مطلوب</string>
+  <string name="name_too_short">الاسم لازم يكون حرفين على الأقل</string>
+  <string name="password_too_short_8">كلمة السر لازم تكون 8 أحرف على الأقل</string>
+  <string name="password_needs_upper">لازم تحتوي على حرف كبير</string>
+  <string name="password_needs_lower">لازم تحتوي على حرف صغير</string>
+  <string name="password_needs_number">لازم تحتوي على رقم</string>
+  <string name="strength_weak">ضعيف</string>
+  <string name="strength_fair">مقبول</string>
+  <string name="strength_good">جيد</string>
+  <string name="strength_strong">قوي</string>
+  <string name="req_min_8_chars">8 أحرف على الأقل</string>
+  <string name="req_uppercase">حرف كبير</string>
+  <string name="req_lowercase">حرف صغير</string>
+  <string name="req_number">رقم</string>
+
+  <!-- OTP / Phone verification -->
+  <string name="too_many_failed_attempts">محاولات فاشلة كثيرة. اطلب كود جديد.</string>
+  <string name="too_many_attempts_warning">محاولات كثيرة. اطلب كود جديد لتكمل.</string>
+  <string name="didnt_receive">ما وصلكش الكود؟</string>
+  <string name="resend_in">عاود الإرسال في {0}ث</string>
+  <string name="by_continuing">بالمتابعة، توافق على</string>
+  <string name="select_country">اختار بلد</string>
+  <string name="search_country_hint">دوّر على بلد أو كود...</string>
+
+  <!-- Onboarding splash -->
+  <string name="onboarding_headline_prefix">جمال،</string>
+  <string name="onboarding_headline_booked">محجوز</string>
+  <string name="onboarding_headline_suffix"> في ثوانٍ.</string>
+  <string name="onboarding_subtext">اكتشف صالونات قريبة منك. اختار وقت. خلصت — بدون مكالمات أو انتظار.</string>
+  <string name="tag_hair">شعر</string>
+  <string name="tag_nails">أظافر</string>
+  <string name="tag_spa">سبا</string>
+  <string name="booked_this_week">محجوز هذا الأسبوع</string>
+
+  <!-- Owner onboarding steps -->
+  <string name="step_salon_details">تفاصيل الصالون</string>
+  <string name="step_salon_details_desc">حكي للعملاء على صالونك.</string>
+  <string name="step_services_offered">الخدمات المقدمة</string>
+  <string name="step_services_desc">اختار فئات الخدمات اللي يقدمها صالونك.</string>
+  <string name="step_salon_location">موقع الصالون</string>
+  <string name="step_location_desc">اضغط على الخريطة لتحديد موقع صالونك بدقة.</string>
+  <string name="step_salon_image">صورة الصالون</string>
+  <string name="step_image_desc">زيد صورة غلاف لصالونك (اختياري).</string>
+  <string name="change">بدّل</string>
+  <string name="tap_to_choose_gallery">اضغط لاختيار من المعرض</string>
+  <string name="image_format_hint">JPG أو PNG · الحد الأقصى 5 ميغا</string>
+  <string name="summary">ملخص</string>
+  <string name="step_label_info">معلومات الصالون</string>
+  <string name="step_label_image">الصورة</string>
+
+</resources>
+

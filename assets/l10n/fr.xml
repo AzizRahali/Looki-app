@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- General -->
+  <string name="app_name">Loomea</string>
+  <string name="ok">OK</string>
+  <string name="yes">Oui</string>
+  <string name="no">Non</string>
+  <string name="cancel">Annuler</string>
+  <string name="save">Enregistrer</string>
+  <string name="back">Retour</string>
+  <string name="done">Terminer</string>
+  <string name="close">Fermer</string>
+  <string name="confirm">Confirmer</string>
+  <string name="delete">Supprimer</string>
+  <string name="edit">Modifier</string>
+  <string name="loading">Chargement...</string>
+  <string name="error">Une erreur est survenue</string>
+  <string name="retry">Réessayer</string>
+  <string name="submit">Soumettre</string>
+  <string name="continue_btn">Continuer</string>
+  <string name="other">Autre</string>
+  <string name="on_site">Sur place</string>
+  <string name="card">Carte</string>
+  <string name="notes">Notes</string>
+
+  <!-- Language selection -->
+  <string name="choose_language">Choisissez votre langue</string>
+  <string name="lang_english">English</string>
+  <string name="lang_french">Français</string>
+  <string name="lang_darija">Darija tunisienne</string>
+  <string name="lang_subtitle">Vous pouvez modifier cela plus tard dans votre profil</string>
+
+  <!-- Auth -->
+  <string name="sign_in">Se connecter</string>
+  <string name="sign_up">S&apos;inscrire</string>
+  <string name="sign_out">Se déconnecter</string>
+  <string name="email">Email</string>
+  <string name="password">Mot de passe</string>
+  <string name="confirm_password">Confirmer le mot de passe</string>
+  <string name="full_name">Nom complet</string>
+  <string name="phone">Téléphone</string>
+  <string name="forgot_password">Mot de passe oublié ?</string>
+  <string name="create_account">Créer un compte</string>
+  <string name="already_have_account">Vous avez déjà un compte ?</string>
+  <string name="dont_have_account">Vous n&apos;avez pas de compte ?</string>
+  <string name="welcome_back">Bon retour</string>
+  <string name="or">ou</string>
+  <string name="i_am_salon_owner">Je suis propriétaire de salon</string>
+  <string name="i_am_client">Je suis client</string>
+  <string name="register_as">S&apos;inscrire en tant que</string>
+
+  <!-- Biometric -->
+  <string name="biometric_sign_in">Connexion biométrique</string>
+  <string name="sign_in_with_biometric">Se connecter par biométrie</string>
+  <string name="biometric_reason">Authentifiez-vous pour vous connecter à Loomea</string>
+  <string name="biometric_sign_in_title">Connexion biométrique</string>
+  <string name="biometric_enable_title">Activer la connexion biométrique ?</string>
+  <string name="biometric_enable_desc">Évitez de saisir votre mot de passe. Utilisez votre empreinte ou Face ID pour vous connecter instantanément.</string>
+  <string name="biometric_enable_reason">Confirmez pour activer la connexion biométrique</string>
+  <string name="biometric_need_relogin">Connectez-vous d&apos;abord avec votre mot de passe, puis activez la biométrie.</string>
+  <string name="not_now">Plus tard</string>
+  <string name="enable">Activer</string>
+
+  <!-- Navigation tabs -->
+  <string name="tab_home">Accueil</string>
+  <string name="tab_search">Recherche</string>
+  <string name="tab_bookings">Réservations</string>
+  <string name="tab_profile">Profil</string>
+  <string name="tab_dashboard">Tableau de bord</string>
+  <string name="tab_my_salon">Mon Salon</string>
+  <string name="tab_schedule">Planning</string>
+
+  <!-- Home screen -->
+  <string name="featured_salons">Salons en vedette</string>
+  <string name="near_you">Près de vous</string>
+  <string name="top_rated">Mieux notés</string>
+  <string name="explore_map">Explorer la carte</string>
+  <string name="see_all">Voir tout</string>
+  <string name="good_morning">Bonjour</string>
+  <string name="good_afternoon">Bon après-midi</string>
+  <string name="good_evening">Bonsoir</string>
+  <string name="discover_salons">Découvrez les salons près de chez vous</string>
+  <string name="open_map">Ouvrir la carte</string>
+  <string name="salons_nearby">salons à proximité</string>
+  <string name="you">toi</string>
+  <string name="glow_up_time">C&apos;est l&apos;heure de briller, {0} !</string>
+  <string name="explore_nearby">Explorer à proximité</string>
+
+  <!-- Search -->
+  <string name="search">Rechercher</string>
+  <string name="search_hint">Rechercher salons, services...</string>
+  <string name="no_results">Aucun résultat trouvé</string>
+  <string name="popular_salons">Salons populaires</string>
+  <string name="search_results">Résultats de recherche</string>
+
+  <!-- Map / Explore -->
+  <string name="explore">Explorer</string>
+  <string name="my_location">Ma position</string>
+  <string name="search_places">Rechercher un lieu...</string>
+  <string name="no_salons_area">Aucun salon dans cette zone</string>
+  <string name="geocoding_error">Lieu introuvable</string>
+
+  <!-- Salon profile -->
+  <string name="services">Services</string>
+  <string name="portfolio">Réalisations</string>
+  <string name="reviews">Avis</string>
+  <string name="book_now">Réserver</string>
+  <string name="write_review">Écrire un avis</string>
+  <string name="your_rating">Votre note</string>
+  <string name="share_experience">Partagez votre expérience (optionnel)</string>
+  <string name="no_services">Aucun service disponible</string>
+  <string name="no_portfolio">Pas encore de réalisations</string>
+  <string name="no_reviews">Pas encore d&apos;avis</string>
+  <string name="add_to_booking">Ajouter</string>
+  <string name="remove_from_booking">Retirer</string>
+  <string name="review_deleted">Avis supprimé</string>
+  <string name="min">min</string>
+  <string name="rating">Note</string>
+
+  <!-- Booking flow -->
+  <string name="select_time_slot">Choisir un créneau</string>
+  <string name="available_slots">Créneaux disponibles</string>
+  <string name="no_slots_available">Aucun créneau disponible pour cette date</string>
+  <string name="booking_review">Récapitulatif</string>
+  <string name="booking_confirmed">Demande envoyée !</string>
+  <string name="booking_submitted_msg">Votre demande de rendez-vous a été envoyée. Le salon confirmera sous peu.</string>
+  <string name="total_price">Prix total</string>
+  <string name="payment_method">Mode de paiement</string>
+  <string name="pay_at_salon">Payer au salon</string>
+  <string name="pay_with_card">Payer par carte</string>
+  <string name="selected_services">Services sélectionnés</string>
+  <string name="select_date">Choisir une date</string>
+  <string name="book_appointment">Prendre rendez-vous</string>
+  <string name="reschedule_appointment">Reprogrammer</string>
+  <string name="go_to_bookings">Voir mes réservations</string>
+  <string name="back_home">Retour à l&apos;accueil</string>
+
+  <!-- My Appointments (client) -->
+  <string name="my_appointments">Mes Rendez-vous</string>
+  <string name="my_bookings">MES RÉSERVATIONS</string>
+  <string name="upcoming">À venir</string>
+  <string name="past">Passés</string>
+  <string name="waitlist">Liste d&apos;attente</string>
+  <string name="reschedule">Reprogrammer</string>
+  <string name="book_again">Réserver à nouveau</string>
+  <string name="cancel_appointment">Annuler le rendez-vous</string>
+  <string name="cancel_appointment_confirm">Êtes-vous sûr de vouloir annuler votre rendez-vous chez {0} ?</string>
+  <string name="keep">Garder</string>
+  <string name="appointment_cancelled">Rendez-vous chez {0} annulé</string>
+  <string name="browse_salons">Explorer les salons</string>
+  <string name="book_next_session">Réservez votre prochaine session beauté</string>
+  <string name="no_upcoming_appointments">Aucun rendez-vous à venir</string>
+  <string name="no_past_appointments">Aucun rendez-vous passé</string>
+
+  <!-- Appointment status -->
+  <string name="status_pending">EN ATTENTE</string>
+  <string name="status_confirmed">CONFIRMÉ</string>
+  <string name="status_cancelled">ANNULÉ</string>
+  <string name="status_completed">TERMINÉ</string>
+  <string name="status_no_show">ABSENT</string>
+  <string name="waiting_for_confirmation">En attente de confirmation du salon</string>
+
+  <!-- Attendance confirmation -->
+  <string name="attendance_required">Confirmation de présence requise</string>
+  <string name="attendance_message">Veuillez confirmer votre présence, sinon votre réservation pourrait être annulée automatiquement.</string>
+  <string name="confirm_attendance">Confirmer ma présence</string>
+
+  <!-- Waitlist -->
+  <string name="no_waitlist">Aucune entrée en liste d&apos;attente</string>
+  <string name="no_waitlist_desc">Quand une date est complète, rejoignez la liste d&apos;attente et nous vous préviendrons dès qu&apos;une place se libère.</string>
+  <string name="slot_opened">Une place s&apos;est libérée — réservez maintenant !</string>
+  <string name="leave_waitlist">Quitter</string>
+  <string name="book">Réserver</string>
+
+  <!-- Owner – Bookings -->
+  <string name="bookings">Réservations</string>
+  <string name="schedule">PLANNING</string>
+  <string name="all">Tous</string>
+  <string name="no_bookings_found">Aucune réservation trouvée</string>
+  <string name="confirm_booking">Confirmer</string>
+  <string name="complete_booking">Terminer</string>
+  <string name="reject_booking">Rejeter</string>
+  <string name="cancel_booking">Annuler</string>
+  <string name="reason_for_rejection">Raison du rejet</string>
+  <string name="rejection_affects_score">Cela affecte le score de fiabilité du client.</string>
+  <string name="double_booking">Double réservation</string>
+  <string name="no_availability">Pas de disponibilité</string>
+  <string name="service_unavailable">Service indisponible</string>
+  <string name="client_reliability">Problèmes de fiabilité du client</string>
+
+  <!-- Owner – Dashboard -->
+  <string name="dashboard">Tableau de bord</string>
+  <string name="today">Aujourd&apos;hui</string>
+  <string name="this_month">Ce mois</string>
+  <string name="revenue">Revenus</string>
+  <string name="total_bookings">Total réservations</string>
+  <string name="pending_bookings">En attente</string>
+  <string name="confirmed_bookings">Confirmées</string>
+  <string name="completed_bookings">Terminées</string>
+  <string name="no_show">Absent</string>
+  <string name="monthly_revenue">Revenus du mois</string>
+  <string name="todays_revenue">Revenus d&apos;aujourd&apos;hui</string>
+  <string name="recent_bookings">Réservations récentes</string>
+  <string name="no_data_yet">Pas encore de données</string>
+  <string name="monthly">Mensuel</string>
+  <string name="todays_schedule">Planning d&apos;aujourd&apos;hui</string>
+  <string name="no_appointments_today">Aucun rendez-vous aujourd&apos;hui</string>
+  <string name="schedule_clear">Votre planning est libre</string>
+  <string name="owner_greeting">Bonjour, {0}.</string>
+
+  <!-- Owner – My Salon -->
+  <string name="my_salon">Mon Salon</string>
+  <string name="salon_label">SALON</string>
+  <string name="add_service">Ajouter un service</string>
+  <string name="add_post">Ajouter une photo</string>
+  <string name="edit_salon">Modifier le salon</string>
+  <string name="salon_name">Nom du salon</string>
+  <string name="description">Description</string>
+  <string name="address">Adresse</string>
+  <string name="category">Catégorie</string>
+  <string name="no_salon">Pas encore de salon</string>
+  <string name="create_salon">Créer votre salon</string>
+  <string name="service_name">Nom du service</string>
+  <string name="service_price">Prix</string>
+  <string name="service_duration">Durée (min)</string>
+  <string name="delete_service">Supprimer le service</string>
+  <string name="delete_post">Supprimer la photo</string>
+  <string name="post_caption">Légende (optionnel)</string>
+  <string name="working_hours">Horaires de travail</string>
+
+  <!-- Profile (client) -->
+  <string name="profile">Profil</string>
+  <string name="account">COMPTE</string>
+  <string name="edit_profile">Modifier le profil</string>
+  <string name="saved_salons">Salons sauvegardés</string>
+  <string name="notifications">Notifications</string>
+  <string name="payment_methods">Modes de paiement</string>
+  <string name="delete_account">Supprimer le compte</string>
+  <string name="location">Localisation</string>
+  <string name="no_saved_salons">Aucun salon sauvegardé</string>
+  <string name="profile_updated">Profil mis à jour avec succès</string>
+  <string name="sign_out_confirm">Êtes-vous sûr de vouloir vous déconnecter ?</string>
+  <string name="delete_account_confirm">Cela supprimera définitivement votre compte. Êtes-vous sûr ?</string>
+  <string name="favorite_salons">Salons favoris</string>
+  <string name="help_center">Centre d&apos;aide</string>
+  <string name="cancel_account_deletion">Annuler la suppression du compte</string>
+  <string name="pending_deletion_msg">Votre compte sera supprimé dans {0} jours.</string>
+  <string name="schedule_deletion">Planifier la suppression</string>
+  <string name="delete_account_desc">Votre compte sera supprimé dans 30 jours. Vous pouvez annuler à tout moment.
+
+Tapez "delete" pour confirmer :</string>
+  <string name="help_center_content">Bienvenue dans le centre d&apos;aide Loomea !
+
+Réserver un rendez-vous
+Parcourez les salons depuis la page d&apos;accueil ou recherchez par nom, service ou catégorie. Sélectionnez les services souhaités, choisissez un créneau et confirmez.
+
+Gérer vos rendez-vous
+Consultez vos rendez-vous à venir et passés dans l&apos;onglet Mes Rendez-vous. Vous pouvez reprogrammer ou annuler depuis cet onglet.
+
+Salons favoris
+Appuyez sur l&apos;icône cœur sur un salon pour le sauvegarder dans vos favoris.
+
+Modes de paiement
+Ajoutez et gérez vos modes de paiement depuis Profil &gt; Paiement.
+
+Besoin d&apos;aide ?
+Contactez-nous à support@loomea.app</string>
+  <string name="terms_of_service_content">Dernière mise à jour : mars 2026
+
+1. Acceptation des conditions
+En utilisant l&apos;application Loomea, vous acceptez ces conditions d&apos;utilisation.
+
+2. Utilisation du service
+Loomea met en relation les utilisateurs avec des salons de beauté. Vous acceptez d&apos;utiliser le service uniquement à des fins légales.
+
+3. Réservations &amp; annulations
+Les rendez-vous peuvent être annulés jusqu&apos;à 24h avant. Les annulations tardives peuvent entraîner des frais.
+
+4. Comptes utilisateurs
+Vous êtes responsable de la confidentialité de vos identifiants.
+
+5. Limitation de responsabilité
+Loomea est un intermédiaire et n&apos;est pas responsable de la qualité des services des salons.
+
+6. Modifications
+Nous nous réservons le droit de modifier ces conditions à tout moment.</string>
+  <string name="privacy_policy_content">Dernière mise à jour : mars 2026
+
+1. Informations collectées
+Nous collectons les informations que vous fournissez directement : nom, email, téléphone, paiement.
+
+2. Utilisation de vos informations
+Vos données servent à fournir nos services, traiter les réservations et personnaliser votre expérience.
+
+3. Partage de données
+Nous partageons vos détails de réservation avec les salons concernés. Nous ne vendons pas vos données.
+
+4. Sécurité
+Nous mettons en place des mesures de sécurité appropriées pour protéger vos informations.
+
+5. Vos droits
+Vous pouvez accéder, modifier ou supprimer vos données depuis les paramètres de l&apos;application.
+
+6. Contact
+Pour toute question, contactez-nous à privacy@loomea.app</string>
+
+  <!-- Reliability -->
+  <string name="trusted">Fiable</string>
+  <string name="normal">Normal</string>
+  <string name="risky">Risqué</string>
+  <string name="restricted">Restreint</string>
+  <string name="reliability_score">Score de fiabilité</string>
+  <string name="reliability_risky_msg">Votre score de fiabilité est faible en raison de rendez-vous manqués. Une confirmation de présence est requise pour les nouvelles réservations.</string>
+  <string name="reliability_restricted_msg">Votre accès aux réservations est restreint en raison de rendez-vous manqués. Respectez vos engagements pour retrouver un accès complet.</string>
+  <string name="tier_trusted_desc">Aucune restriction. Continuez à respecter vos rendez-vous !</string>
+  <string name="tier_normal_desc">Réservation standard. Évitez les annulations tardives pour maintenir votre score.</string>
+  <string name="tier_risky_desc">Confirmation requise avant les rendez-vous. Max 2 réservations actives.</string>
+  <string name="tier_restricted_desc">Accès aux réservations restreint. Respectez vos engagements pour récupérer.</string>
+  <string name="reliability_score_rule">Score : +2 par rendez-vous complété, +5 bonus série (tous les 3), -10 annulation tardive, -20 absent, +1 passif tous les 7 jours.</string>
+
+  <!-- Days and months -->
+  <string name="day_1">Lundi</string>
+  <string name="day_2">Mardi</string>
+  <string name="day_3">Mercredi</string>
+  <string name="day_4">Jeudi</string>
+  <string name="day_5">Vendredi</string>
+  <string name="day_6">Samedi</string>
+  <string name="day_7">Dimanche</string>
+  <string name="month_1">Janvier</string>
+  <string name="month_2">Février</string>
+  <string name="month_3">Mars</string>
+  <string name="month_4">Avril</string>
+  <string name="month_5">Mai</string>
+  <string name="month_6">Juin</string>
+  <string name="month_7">Juillet</string>
+  <string name="month_8">Août</string>
+  <string name="month_9">Septembre</string>
+  <string name="month_10">Octobre</string>
+  <string name="month_11">Novembre</string>
+  <string name="month_12">Décembre</string>
+
+  <!-- Onboarding -->
+  <string name="get_started">Commencer</string>
+  <string name="skip">Passer</string>
+  <string name="next">Suivant</string>
+  <string name="onboarding_title_1">Découvrez les meilleurs salons</string>
+  <string name="onboarding_desc_1">Trouvez les meilleurs salons de beauté près de vous avec de vrais avis et notes.</string>
+  <string name="onboarding_title_2">Réservez en un instant</string>
+  <string name="onboarding_desc_2">Choisissez votre service, un créneau et confirmez en quelques secondes.</string>
+  <string name="onboarding_title_3">Tout gérer facilement</string>
+  <string name="onboarding_desc_3">Gérez vos rendez-vous, recevez des rappels et ne manquez plus aucune session.</string>
+
+  <!-- Owner onboarding -->
+  <string name="setup_salon">Créez votre salon</string>
+  <string name="salon_setup_desc">Parlez-nous de votre salon pour commencer à recevoir des réservations.</string>
+  <string name="pick_location">Choisir l&apos;emplacement sur la carte</string>
+  <string name="create_salon_btn">Créer le salon</string>
+  <string name="add_services_later">Vous pourrez ajouter des services après la création du salon.</string>
+
+  <!-- Permissions -->
+  <string name="perm_location_title">Trouvez des salons près de vous</string>
+  <string name="perm_location_desc">Autorisez l&apos;accès à votre position pour découvrir les meilleurs salons autour de vous.</string>
+  <string name="perm_notifications_title">Restez informé</string>
+  <string name="perm_notifications_desc">Recevez des notifications quand votre réservation est confirmée, annulée ou quand une place se libère.</string>
+  <string name="allow">Autoriser</string>
+  <string name="skip_for_now">Passer</string>
+  <string name="step_of">Étape {0} sur {1}</string>
+  <string name="price_amount">{0} TND</string>
+  <string name="select_time_to_continue">Sélectionnez une heure pour continuer</string>
+  <string name="permissions_title">Configuration rapide</string>
+
+  <!-- Auth extras -->
+  <string name="not_set">Non défini</string>
+  <string name="log_out">Se déconnecter</string>
+  <string name="help_support">Aide &amp; Support</string>
+  <string name="terms_of_service">Conditions d&apos;utilisation</string>
+  <string name="privacy_policy">Politique de confidentialité</string>
+  <string name="preferences">PRÉFÉRENCES</string>
+  <string name="support">SUPPORT</string>
+  <string name="verify_email">Vérifier l&apos;e-mail</string>
+  <string name="enter_email_otp">Entrez le code à 6 chiffres envoyé à</string>
+  <string name="resend_code">Renvoyer le code</string>
+  <string name="verify">Vérifier</string>
+  <string name="check_spam_folder">Pas reçu ? Vérifiez vos spams</string>
+
+  <!-- Booking extras -->
+  <string name="duration">Durée</string>
+  <string name="price">Prix</string>
+  <string name="salon">Salon</string>
+  <string name="date">Date</string>
+  <string name="time">Heure</string>
+  <string name="add_notes">Ajouter des notes (optionnel)</string>
+  <string name="booking_details">Détails de la réservation</string>
+  <string name="no_notifications">Aucune notification</string>
+  <string name="mark_all_read">Tout marquer comme lu</string>
+  <string name="today_label">Aujourd&apos;hui</string>
+  <string name="earlier">Plus tôt</string>
+  <string name="no_saved_yet">Aucun salon sauvegardé</string>
+  <string name="showcase_work">Montrez votre meilleur travail</string>
+  <string name="client_reviews">Les avis des clients apparaîtront ici</string>
+  <string name="open_in_maps">Ouvrir dans Maps</string>
+  <string name="select_services">Sélectionner les services</string>
+  <string name="no_slots_day">Aucun créneau disponible ce jour</string>
+  <string name="select_payment">Choisir le mode de paiement</string>
+  <string name="confirm_booking_title">Confirmer la réservation</string>
+  <string name="add_to_cart">Ajouter</string>
+  <string name="remove">Retirer</string>
+  <string name="salon_closed">Le salon est fermé ce jour</string>
+  <string name="free">Gratuit</string>
+  <string name="join_waitlist">Rejoindre la liste d&apos;attente</string>
+  <string name="waitlist_full_msg">Cette date est complète. Rejoignez la liste d&apos;attente pour être notifié dès qu&apos;une place se libère.</string>
+
+  <!-- Booking – slot picker -->
+  <string name="n_service_selected">{0} service sélectionné</string>
+  <string name="n_services_selected">{0} services sélectionnés</string>
+  <string name="select_at_least_one_service">Sélectionnez au moins 1 service</string>
+  <string name="total">Total</string>
+  <string name="pick_a_day">Choisissez un jour.</string>
+  <string name="n_selected_services">{0} services sélectionnés</string>
+  <string name="no_services_selected">Aucun service sélectionné</string>
+  <string name="select_date_to_see_times">Sélectionnez une date pour voir les horaires disponibles</string>
+  <string name="available_time_slots">Créneaux disponibles</string>
+  <string name="slot_selected">SÉLECTIONNÉ</string>
+  <string name="slot_booked">RÉSERVÉ</string>
+  <string name="slot_limited">LIMITÉ</string>
+  <string name="slot_available">DISPONIBLE</string>
+  <string name="confirm_reschedule">Confirmer le changement</string>
+  <string name="confirm_time">Confirmer l&apos;heure</string>
+  <string name="on_waitlist">Sur liste d&apos;attente</string>
+
+  <!-- Booking – review -->
+  <string name="review">Récapitulatif</string>
+  <string name="almost_there">Presque fini.</string>
+  <string name="special_requests_hint">Des demandes particulières ?</string>
+  <string name="cancellation_policy">Annulation gratuite jusqu&apos;à 2 heures avant votre rendez-vous. Les annulations tardives ou absences peuvent entraîner des frais selon la politique du salon.</string>
+
+  <!-- Booking – confirmation -->
+  <string name="booking_submitted">Réservation soumise</string>
+  <string name="your_chair_is_held">Votre place est réservée.</string>
+  <string name="minutes_duration">{0} minutes de durée</string>
+  <string name="date_and_time">Date &amp; heure</string>
+  <string name="paid">PAYÉ</string>
+  <string name="added_to_calendar_title">Ajouté au calendrier ✓</string>
+  <string name="calendar_saved_msg">Votre rendez-vous a été enregistré dans votre calendrier.</string>
+  <string name="added_to_calendar">Ajouté au calendrier</string>
+  <string name="add_to_calendar">Ajouter au calendrier</string>
+  <string name="set_reminder">Définir un rappel</string>
+
+  <!-- Calendar / Date abbreviations -->
+  <string name="day_abbr_1">Lun</string>
+  <string name="day_abbr_2">Mar</string>
+  <string name="day_abbr_3">Mer</string>
+  <string name="day_abbr_4">Jeu</string>
+  <string name="day_abbr_5">Ven</string>
+  <string name="day_abbr_6">Sam</string>
+  <string name="day_abbr_7">Dim</string>
+  <string name="month_abbr_1">Janv</string>
+  <string name="month_abbr_2">Févr</string>
+  <string name="month_abbr_3">Mars</string>
+  <string name="month_abbr_4">Avr</string>
+  <string name="month_abbr_5">Mai</string>
+  <string name="month_abbr_6">Juin</string>
+  <string name="month_abbr_7">Juil</string>
+  <string name="month_abbr_8">Août</string>
+  <string name="month_abbr_9">Sept</string>
+  <string name="month_abbr_10">Oct</string>
+  <string name="month_abbr_11">Nov</string>
+  <string name="month_abbr_12">Déc</string>
+
+  <!-- Password reset -->
+  <string name="recover_account">Récupérer le compte</string>
+  <string name="enter_phone_or_email">Numéro de téléphone ou email</string>
+  <string name="enter_email_to_reset">Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe.</string>
+  <string name="send_me_a_code">Envoyer un code</string>
+  <string name="send_me_a_link">Envoyer un lien</string>
+  <string name="check_your_messages">Vérifiez vos messages</string>
+  <string name="code_sent_to">Nous avons envoyé un code à 6 chiffres à</string>
+  <string name="wrong_number">Mauvais numéro ?</string>
+  <string name="otp_attempts_left">{0} tentatives restantes</string>
+  <string name="otp_last_attempt">Dernière tentative — faites attention</string>
+  <string name="otp_locked_out">Code bloqué. Appuyez sur Renvoyer pour en obtenir un nouveau.</string>
+  <string name="code_expired_msg">Votre code a expiré. Veuillez en demander un nouveau.</string>
+  <string name="otp_code_resent">Nouveau code envoyé !</string>
+  <string name="check_inbox">Vérifiez votre boîte mail</string>
+  <string name="link_sent_to">Nous avons envoyé un lien de réinitialisation à</string>
+  <string name="link_expires_15min">Le lien expire dans 15 minutes.</string>
+  <string name="open_mail_app">Ouvrir l&apos;application mail</string>
+  <string name="nothing_in_inbox">Pas reçu ? Renvoyer</string>
+  <string name="link_expired_title">Lien expiré</string>
+  <string name="link_expired_desc">Votre lien de réinitialisation a expiré. Veuillez recommencer.</string>
+  <string name="new_password_title">Nouveau mot de passe</string>
+  <string name="make_it_memorable">Choisissez quelque chose de sécurisé.</string>
+  <string name="save_password">Enregistrer le mot de passe</string>
+  <string name="strength_too_short">Trop court</string>
+  <string name="req_different_from_current">Doit être différent du mot de passe actuel</string>
+  <string name="secured_encryption">Protégé par chiffrement de bout en bout</string>
+  <string name="youre_back">Vous êtes de retour !</string>
+  <string name="password_updated_msg">Votre mot de passe a été mis à jour. Connectez-vous pour continuer.</string>
+  <string name="back_to_sign_in">Retour à la connexion</string>
+  <string name="rate_limited_title">Trop de tentatives</string>
+  <string name="rate_limited_desc">Trop de tentatives. Veuillez patienter 10 minutes et réessayer.</string>
+  <string name="how_recover">Comment souhaitez-vous récupérer ?</string>
+  <string name="text_me_code">Envoyer un code par SMS</string>
+  <string name="email_me_link">Envoyer un lien par email</string>
+  <string name="something_went_wrong">Quelque chose s&apos;est mal passé. Réessayez.</string>
+
+  <!-- Sign in / Sign up -->
+  <string name="sign_in_subtitle">Entrez vos identifiants pour continuer.</string>
+  <string name="invalid_credentials">Email ou mot de passe invalide</string>
+  <string name="email_required">L&apos;email est requis</string>
+  <string name="email_invalid">Entrez une adresse email valide</string>
+  <string name="password_required">Le mot de passe est requis</string>
+  <string name="password_too_short_6">Le mot de passe doit contenir au moins 6 caractères</string>
+  <string name="new_here">Nouveau ici ?</string>
+  <string name="join_tagline">Rejoignez looki.</string>
+  <string name="enter_details">Entrez vos informations pour commencer.</string>
+  <string name="registration_failed">Inscription échouée. Veuillez réessayer.</string>
+  <string name="by_signing_up">En vous inscrivant, vous acceptez nos</string>
+  <string name="and">et</string>
+  <string name="role_client">Client</string>
+  <string name="role_salon_owner">Propriétaire de salon</string>
+  <string name="create_password_hint">Créer un mot de passe</string>
+  <string name="full_name_required">Le nom complet est requis</string>
+  <string name="name_too_short">Le nom doit contenir au moins 2 caractères</string>
+  <string name="password_too_short_8">Le mot de passe doit contenir au moins 8 caractères</string>
+  <string name="password_needs_upper">Doit contenir une lettre majuscule</string>
+  <string name="password_needs_lower">Doit contenir une lettre minuscule</string>
+  <string name="password_needs_number">Doit contenir un chiffre</string>
+  <string name="strength_weak">Faible</string>
+  <string name="strength_fair">Passable</string>
+  <string name="strength_good">Bien</string>
+  <string name="strength_strong">Fort</string>
+  <string name="req_min_8_chars">Au moins 8 caractères</string>
+  <string name="req_uppercase">Lettre majuscule</string>
+  <string name="req_lowercase">Lettre minuscule</string>
+  <string name="req_number">Un chiffre</string>
+
+  <!-- OTP / Phone verification -->
+  <string name="too_many_failed_attempts">Trop de tentatives échouées. Veuillez demander un nouveau code.</string>
+  <string name="too_many_attempts_warning">Trop de tentatives. Demandez un nouveau code pour continuer.</string>
+  <string name="didnt_receive">Vous ne l&apos;avez pas reçu ?</string>
+  <string name="resend_in">Renvoyer dans {0}s</string>
+  <string name="by_continuing">En continuant, vous acceptez nos</string>
+  <string name="select_country">Sélectionner un pays</string>
+  <string name="search_country_hint">Rechercher un pays ou un indicatif...</string>
+
+  <!-- Onboarding splash -->
+  <string name="onboarding_headline_prefix">Beauté,</string>
+  <string name="onboarding_headline_booked">réservée</string>
+  <string name="onboarding_headline_suffix"> en secondes.</string>
+  <string name="onboarding_subtext">Découvrez des salons près de chez vous. Choisissez un créneau. Fini — sans appels ni attente.</string>
+  <string name="tag_hair">Cheveux</string>
+  <string name="tag_nails">Ongles</string>
+  <string name="tag_spa">Spa</string>
+  <string name="booked_this_week">réservés cette semaine</string>
+
+  <!-- Owner onboarding steps -->
+  <string name="step_salon_details">Informations du salon</string>
+  <string name="step_salon_details_desc">Présentez votre salon aux clients.</string>
+  <string name="step_services_offered">Services proposés</string>
+  <string name="step_services_desc">Sélectionnez les catégories de services de votre salon.</string>
+  <string name="step_salon_location">Localisation du salon</string>
+  <string name="step_location_desc">Appuyez sur la carte pour définir l&apos;emplacement exact de votre salon.</string>
+  <string name="step_salon_image">Image du salon</string>
+  <string name="step_image_desc">Ajoutez une photo de couverture pour votre salon (facultatif).</string>
+  <string name="change">Modifier</string>
+  <string name="tap_to_choose_gallery">Appuyez pour choisir depuis la galerie</string>
+  <string name="image_format_hint">JPG ou PNG · max 5 Mo</string>
+  <string name="summary">Résumé</string>
+  <string name="step_label_info">Infos salon</string>
+  <string name="step_label_image">Image</string>
+
+</resources>
+
