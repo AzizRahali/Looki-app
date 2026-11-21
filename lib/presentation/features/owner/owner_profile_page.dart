@@ -115,7 +115,7 @@ class OwnerProfilePage extends StatelessWidget {
                     _SettingsItem(
                       icon: Icons.help_outline_rounded,
                       label: tr('help_support'),
-                      onTap: () {},
+                      onTap: () => context.pushNamed(AppRoute.supportChat.name, extra: true),
                     ),
                     const Divider(height: 1, indent: 52),
                     _SettingsItem(

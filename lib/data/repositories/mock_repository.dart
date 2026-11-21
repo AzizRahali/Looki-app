@@ -6,11 +6,14 @@ import '../models/appointment_model.dart';
 import '../models/category_model.dart';
 import '../models/owner_booking_model.dart';
 import '../models/owner_dashboard_model.dart';
+import '../models/owner_insights_model.dart';
 import '../models/owner_salon_model.dart';
 import '../models/portfolio_model.dart';
 import '../models/profile_model.dart';
 import '../models/review_model.dart';
 import '../models/salon_model.dart';
+import '../models/smart_search_model.dart';
+import '../models/support_model.dart';
 import '../models/waitlist_model.dart';
 import '../models/working_hours_model.dart';
 import '../models/service_catalog_model.dart';
@@ -63,6 +66,10 @@ class MockRepository implements LoomeeaRepository {
           s.services.any((svc) => svc.name.toLowerCase().contains(q));
     }).toList();
   }
+
+  @override
+  Future<SmartSearchResult> smartSearch(String query) async =>
+      SmartSearchResult(salons: await searchSalons(query), aiUsed: false);
 
   @override
   Future<List<Salon>> searchAvailable({
@@ -475,6 +482,15 @@ class MockRepository implements LoomeeaRepository {
     final data = await _loadData();
     return Dashboard.fromJson(data['dashboard'] as Map<String, dynamic>);
   }
+
+  @override
+  Future<OwnerInsights> getOwnerInsights(String salonId, String language) async =>
+      const OwnerInsights(enoughData: false, periodDays: 28, bookings: 0, revenue: 0);
+
+  @override
+  Future<SupportReply> askSupport(
+          List<SupportMessage> messages, String language) async =>
+      const SupportReply(aiUsed: false, answered: false);
   @override
   Future<List<PortfolioPost>> getOwnerPortfolioPosts(String salonId) async => [];
   @override
