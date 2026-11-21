@@ -7,7 +7,7 @@ class AppConfig {
   /// Backend base URL — pick the one that matches your setup:
   ///
   /// Web / iOS Simulator → localhost
-  static const String apiBaseUrl = 'https://looki-backend.onrender.com';
+  static const String apiBaseUrl = 'https://looki-service.onrender.com';
 
   /// Android Emulator → 10.0.2.2 maps to host machine
   // static const String apiBaseUrl = 'http://10.0.2.2:8080';
