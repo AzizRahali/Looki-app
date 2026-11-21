@@ -424,6 +424,16 @@ class _AppointmentCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 _IconRow(icon: Icons.location_on_outlined, text: appointment.address, expand: true),
+                if (appointment.isPaidByCard || appointment.isRefunded) ...[
+                  const SizedBox(height: 4),
+                  _IconRow(
+                    icon: appointment.isRefunded
+                        ? Icons.undo_rounded
+                        : Icons.credit_card_rounded,
+                    text: '${tr(appointment.isRefunded ? 'payment_status_refunded' : 'paid_online')}'
+                        '  ·  ${appointment.priceText}',
+                  ),
+                ],
                 if (appointment.needsAttendanceConfirmation) ...[
                   const SizedBox(height: 12),
                   _AttendanceBanner(onConfirm: onConfirmAttendance),

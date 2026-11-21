@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../logic/blocs/booking/booking_bloc.dart';
+import '../../../logic/blocs/payment/payment_event.dart';
 import '../../../logic/blocs/booking/booking_event.dart';
 import '../../../logic/blocs/booking/booking_state.dart';
 import '../../../logic/blocs/salon/salon_bloc.dart';
@@ -15,6 +16,7 @@ import '../../core/theme/loomea_tokens.dart';
 import '../../core/utils/icon_mapper.dart';
 import '../../core/widgets/loomea_ui.dart';
 import '../../../data/services/localization_service.dart';
+import '../payment/payment_page.dart';
 
 class BookingReviewPage extends StatefulWidget {
   const BookingReviewPage({super.key});
@@ -25,6 +27,7 @@ class BookingReviewPage extends StatefulWidget {
 
 class _BookingReviewPageState extends State<BookingReviewPage> {
   final TextEditingController _notesController = TextEditingController();
+  String _paymentMethod = 'PAY_AT_SALON';
 
   @override
   void dispose() {
@@ -120,6 +123,12 @@ class _BookingReviewPageState extends State<BookingReviewPage> {
                             const Divider(color: AppColors.border),
                             const SizedBox(height: 28),
                             _NotesSection(controller: _notesController),
+                            const SizedBox(height: 28),
+                            _PaymentMethodSection(
+                              selected: _paymentMethod,
+                              onChanged: (m) =>
+                                  setState(() => _paymentMethod = m),
+                            ),
                             const SizedBox(height: 20),
                             const _CancellationPolicy(),
                             const SizedBox(height: 24),
@@ -129,7 +138,10 @@ class _BookingReviewPageState extends State<BookingReviewPage> {
                     ),
                     _BookingActionBar(
                       onBack: () => context.pop(),
-                      onConfirm: () {
+                      confirmLabel: _paymentMethod == 'PAY_WITH_CARD'
+                          ? tr('continue_to_payment')
+                          : tr('confirm'),
+                      onConfirm: () async {
                         HapticFeedback.mediumImpact();
                         final note = _notesController.text.trim();
                         final month = bookingState.selectedMonth > 0
@@ -144,16 +156,45 @@ class _BookingReviewPageState extends State<BookingReviewPage> {
                         final dateStr =
                             '$year-${month.toString().padLeft(2, '0')}-${day.toString().padLeft(2, '0')}';
 
-                        context.read<BookingBloc>().add(
-                              ConfirmBooking(
+                        final bookingBloc = context.read<BookingBloc>();
+
+                        if (_paymentMethod == 'PAY_WITH_CARD') {
+                          // The backend creates the booking together with the
+                          // Stripe Checkout session, then confirms it once paid.
+                          final paid = await context.pushNamed<bool>(
+                            AppRoute.payment.name,
+                            extra: PaymentArgs(
+                              request: BookingPaymentRequest(
                                 salonId: salon?.id ?? '',
                                 date: dateStr,
                                 startTime: _to24h(bookingState.selectedTime),
                                 serviceIds: salonState.selectedServiceIds,
-                                paymentMethod: 'PAY_AT_SALON',
                                 notes: note.isEmpty ? null : note,
                               ),
-                            );
+                              title: salon?.name ?? '',
+                              subtitle:
+                                  '${selectedServices.map((s) => s.name).join(', ')}'
+                                  ' · $dateLabel @ $selectedTime',
+                              priceLabel:
+                                  formatPrice(salonState.selectedServicesTotal),
+                            ),
+                          );
+                          if (paid != true || !context.mounted) return;
+                          bookingBloc.add(LoadAppointments());
+                          context.pushNamed(AppRoute.bookingConfirmation.name);
+                          return;
+                        }
+
+                        bookingBloc.add(
+                          ConfirmBooking(
+                            salonId: salon?.id ?? '',
+                            date: dateStr,
+                            startTime: _to24h(bookingState.selectedTime),
+                            serviceIds: salonState.selectedServiceIds,
+                            paymentMethod: 'PAY_AT_SALON',
+                            notes: note.isEmpty ? null : note,
+                          ),
+                        );
                         context.pushNamed(AppRoute.bookingConfirmation.name);
                       },
                     ),
@@ -380,6 +421,125 @@ class _NotesSection extends StatelessWidget {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Payment method
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _PaymentMethodSection extends StatelessWidget {
+  const _PaymentMethodSection({required this.selected, required this.onChanged});
+
+  final String selected;
+  final ValueChanged<String> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          tr('payment_method'),
+          style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              color: AppColors.textPrimary),
+        ),
+        const SizedBox(height: 12),
+        _PaymentMethodOption(
+          icon: Icons.storefront_outlined,
+          title: tr('pay_at_salon'),
+          subtitle: tr('pay_at_salon_desc'),
+          selected: selected == 'PAY_AT_SALON',
+          onTap: () => onChanged('PAY_AT_SALON'),
+        ),
+        const SizedBox(height: 10),
+        _PaymentMethodOption(
+          icon: Icons.credit_card_rounded,
+          title: tr('pay_with_card'),
+          subtitle: tr('pay_with_card_desc'),
+          selected: selected == 'PAY_WITH_CARD',
+          onTap: () => onChanged('PAY_WITH_CARD'),
+        ),
+      ],
+    );
+  }
+}
+
+class _PaymentMethodOption extends StatelessWidget {
+  const _PaymentMethodOption({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.selected,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: AppColors.surface,
+      borderRadius: BorderRadius.circular(LoomeaTokens.radiusInput),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(LoomeaTokens.radiusInput),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 150),
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(LoomeaTokens.radiusInput),
+            border: Border.all(
+              color: selected ? AppColors.accent : AppColors.border,
+              width: selected ? 2 : 1,
+            ),
+          ),
+          child: Row(
+            children: [
+              Icon(icon, size: 22, color: AppColors.inkSoft),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      subtitle,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        height: 1.35,
+                        color: AppColors.textSecondary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              Icon(
+                selected
+                    ? Icons.radio_button_checked_rounded
+                    : Icons.radio_button_off_rounded,
+                color: selected ? AppColors.accent : AppColors.textMutedSoft,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Cancellation policy
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -418,10 +578,15 @@ class _CancellationPolicy extends StatelessWidget {
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _BookingActionBar extends StatelessWidget {
-  const _BookingActionBar({required this.onBack, required this.onConfirm});
+  const _BookingActionBar({
+    required this.onBack,
+    required this.onConfirm,
+    required this.confirmLabel,
+  });
 
   final VoidCallback onBack;
   final VoidCallback onConfirm;
+  final String confirmLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -461,7 +626,7 @@ class _BookingActionBar extends StatelessWidget {
               height: LoomeaTokens.buttonHeight,
               child: ElevatedButton(
                 onPressed: onConfirm,
-                child: Text(tr('confirm')),
+                child: Text(confirmLabel),
               ),
             ),
           ),

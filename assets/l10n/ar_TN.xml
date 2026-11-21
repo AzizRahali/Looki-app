@@ -571,5 +571,58 @@
   <string name="step_label_info">معلومات الصالون</string>
   <string name="step_label_image">الصورة</string>
 
+  <!-- Payments (Stripe) & subscription -->
+  <string name="pay_at_salon_desc">تخلص في الصالون نهار الموعد</string>
+  <string name="pay_with_card_desc">خلاص آمن بـ Stripe. الحجز يتأكد طول.</string>
+  <string name="continue_to_payment">كمّل للخلاص</string>
+  <string name="payment_title">الخلاص</string>
+  <string name="payment_secure_note">تدخّل الكارطة في صفحة Stripe الآمنة. looki ما يشوفش نومرو الكارطة متاعك.</string>
+  <string name="payment_charged_as">Stripe باش يخصم {0}</string>
+  <string name="payment_total">المجموع</string>
+  <string name="pay_amount">خلّص {0}</string>
+  <string name="payment_preparing">قاعدين نحضّرو صفحة الخلاص…</string>
+  <string name="payment_in_browser_title">كمّل الخلاص في المتصفح</string>
+  <string name="payment_in_browser_desc">Stripe Checkout تحل في المتصفح. الشاشة هذي تتبدّل وحدها كي يتعدّى الخلاص.</string>
+  <string name="payment_reopen">عاود حلّ صفحة الخلاص</string>
+  <string name="payment_cancel">بطّل الخلاص</string>
+  <string name="payment_verifying">قاعدين نأكدو الخلاص…</string>
+  <string name="payment_success_title">الخلاص تعدّى</string>
+  <string name="payment_success_booking">الحجز متاعك تأكّد.</string>
+  <string name="payment_success_subscription">الاشتراك متاعك مفعّل.</string>
+  <string name="payment_cancelled_title">الخلاص تبطّل</string>
+  <string name="payment_cancelled_desc">ما تخصم حتى مليم.</string>
+  <string name="payment_refunded_title">الفلوس رجعتلك</string>
+  <string name="payment_refunded_desc">الوقت هذا تاخذ قبل ما يتعدّى الخلاص، رجّعنالك الفلوس الكل. اختار وقت آخر.</string>
+  <string name="payment_failed_title">الخلاص ما تعدّاش</string>
+  <string name="choose_another_time">اختار وقت آخر</string>
+  <string name="continue_label">كمّل</string>
+  <string name="payment_history">تاريخ الخلاص</string>
+  <string name="billing_history">تاريخ الفواتير</string>
+  <string name="payment_history_empty">ما فمّا حتى خلاص لتوّا</string>
+  <string name="payment_history_empty_desc">الخلاص بالكارطة متاع حجوزاتك باش يظهر هوني.</string>
+  <string name="billing_history_empty_desc">خلاص الاشتراك متاعك باش يظهر هوني.</string>
+  <string name="payment_status_completed">مخلّص</string>
+  <string name="payment_status_refunded">مرجوع</string>
+  <string name="payment_status_failed">فاشل</string>
+  <string name="payment_status_awaiting">يستنى في الخلاص</string>
+  <string name="paid_online">مخلّص أونلاين</string>
+  <string name="subscription">الاشتراك</string>
+  <string name="subscription_title">اشتراكك في looki</string>
+  <string name="subscription_subtitle">خلّي الصالون متاعك على looki وتصرّف في الحجوزات بالاشتراك.</string>
+  <string name="subscription_active">مفعّل</string>
+  <string name="subscription_expired">وفى</string>
+  <string name="subscription_none">ما عندكش اشتراك مفعّل</string>
+  <string name="subscription_valid_until">صالح حتى {0}</string>
+  <string name="subscription_days_left">باقي {0} يوم</string>
+  <string name="plan_monthly">شهري</string>
+  <string name="plan_yearly">سنوي</string>
+  <string name="per_month">/ شهر</string>
+  <string name="per_year">/ عام</string>
+  <string name="plan_save">وفّر {0}%</string>
+  <string name="choose_plan">اختار العرض</string>
+  <string name="subscribe_cta">اشترك</string>
+  <string name="extend_cta">مدّد الاشتراك</string>
+  <string name="subscription_extend_note">الأيام الي باقيتلك ما تضيعش: المدة الجديدة تبدا كي توفى الحالية.</string>
+
 </resources>
 

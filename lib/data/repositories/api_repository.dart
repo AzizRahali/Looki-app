@@ -4,10 +4,12 @@ import '../models/category_model.dart';
 import '../models/owner_booking_model.dart';
 import '../models/owner_dashboard_model.dart';
 import '../models/owner_salon_model.dart';
+import '../models/payment_model.dart';
 import '../models/portfolio_model.dart';
 import '../models/profile_model.dart';
 import '../models/review_model.dart';
 import '../models/salon_model.dart';
+import '../models/subscription_model.dart';
 import '../models/service_model.dart';
 import '../models/waitlist_model.dart';
 import '../models/working_hours_model.dart';
@@ -706,6 +708,75 @@ class ApiRepository implements LoomeeaRepository {
     );
   }
 
+  // ─── Payments (Stripe Checkout) ──────────────────────────────────────
+
+  @override
+  Future<PaymentCheckout> startBookingPayment({
+    required String salonId,
+    required String date,
+    required String startTime,
+    required List<String> serviceIds,
+    String? notes,
+  }) async {
+    final response = await _client.post('/api/payments/initiate', body: {
+      'type': 'BOOKING',
+      'salonId': salonId,
+      'date': date,
+      'startTime': startTime,
+      'serviceIds': serviceIds,
+      if (notes != null) 'notes': notes,
+    });
+    return PaymentCheckout.fromJson(response['data'] as Map<String, dynamic>);
+  }
+
+  @override
+  Future<PaymentCheckout> startSubscriptionPayment(String plan) async {
+    final response = await _client.post('/api/payments/initiate', body: {
+      'type': 'SUBSCRIPTION',
+      'plan': plan,
+    });
+    return PaymentCheckout.fromJson(response['data'] as Map<String, dynamic>);
+  }
+
+  @override
+  Future<PaymentStatusInfo> getPaymentStatus(String paymentRef) async {
+    final response = await _client.get('/api/payments/status/$paymentRef');
+    return PaymentStatusInfo.fromJson(response['data'] as Map<String, dynamic>);
+  }
+
+  @override
+  Future<PaymentStatusInfo> cancelPayment(String paymentRef) async {
+    final response = await _client.post('/api/payments/$paymentRef/cancel');
+    return PaymentStatusInfo.fromJson(response['data'] as Map<String, dynamic>);
+  }
+
+  @override
+  Future<List<PaymentHistoryItem>> getPaymentHistory() async {
+    final response = await _client.get('/api/payments/history');
+    return (response['data'] as List? ?? [])
+        .map((p) => PaymentHistoryItem.fromJson(p as Map<String, dynamic>))
+        .toList();
+  }
+
+  // ─── Owner: Subscription ──────────────────────────────────────────────
+
+  @override
+  Future<SubscriptionModel?> getSubscription() async {
+    final response = await _client.get('/api/subscriptions/me');
+    final data = response['data'];
+    return data == null
+        ? null
+        : SubscriptionModel.fromJson(data as Map<String, dynamic>);
+  }
+
+  @override
+  Future<List<SubscriptionPlanModel>> getSubscriptionPlans() async {
+    final response = await _client.get('/api/subscriptions/plans');
+    return (response['data'] as List? ?? [])
+        .map((p) => SubscriptionPlanModel.fromJson(p as Map<String, dynamic>))
+        .toList();
+  }
+
   Appointment _mapApiAppointment(Map<String, dynamic> json) {
     final serviceNames = (json['services'] as List? ?? [])
         .map((s) =>
@@ -726,6 +797,7 @@ class ApiRepository implements LoomeeaRepository {
       status: (json['status'] as String? ?? 'CONFIRMED').toLowerCase(),
       totalPrice: (json['totalPrice'] as num?)?.toDouble() ?? 0.0,
       paymentMethod: json['paymentMethod'] as String? ?? 'PAY_AT_SALON',
+      paymentStatus: json['paymentStatus'] as String?,
       requiresClientConfirmation:
           json['requiresClientConfirmation'] as bool? ?? false,
       clientConfirmedAt: json['clientConfirmedAt'] as String?,
