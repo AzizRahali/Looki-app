@@ -15,6 +15,15 @@ class SearchSalons extends SearchEvent {
   List<Object?> get props => [query];
 }
 
+/// Natural-language search interpreted by AI on the backend.
+class SmartSearch extends SearchEvent {
+  final String query;
+  const SmartSearch(this.query);
+
+  @override
+  List<Object?> get props => [query];
+}
+
 class SearchAvailability extends SearchEvent {
   final String date;
   final String time;

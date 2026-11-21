@@ -265,6 +265,12 @@ class ProfilePage extends StatelessWidget {
                     onTap: () =>
                         context.pushNamed(AppRoute.favoriteSalons.name),
                   ),
+                  _SettingsItem(
+                    icon: Icons.receipt_long_outlined,
+                    label: tr('payment_history'),
+                    onTap: () =>
+                        context.pushNamed(AppRoute.paymentHistory.name),
+                  ),
                   const _BiometricToggle(),
                 ],
               ),
@@ -275,7 +281,7 @@ class ProfilePage extends StatelessWidget {
                   _SettingsItem(
                     icon: Icons.help_outline_rounded,
                     label: tr('help_center'),
-                    onTap: () => _showInfoSheet(context, tr('help_center'), tr('help_center_content')),
+                    onTap: () => context.pushNamed(AppRoute.supportChat.name, extra: false),
                   ),
                   _SettingsItem(
                     icon: Icons.description_outlined,

@@ -16,6 +16,8 @@ class Appointment extends Equatable {
   final String status;
   final double totalPrice;
   final String paymentMethod;
+  /// AWAITING_PAYMENT | PAID | REFUNDED for card bookings, null otherwise.
+  final String? paymentStatus;
   final bool requiresClientConfirmation;
   final String? clientConfirmedAt;
 
@@ -33,6 +35,7 @@ class Appointment extends Equatable {
     required this.status,
     required this.totalPrice,
     required this.paymentMethod,
+    this.paymentStatus,
     this.requiresClientConfirmation = false,
     this.clientConfirmedAt,
   });
@@ -52,6 +55,7 @@ class Appointment extends Equatable {
       status: json['status'] as String,
       totalPrice: (json['totalPrice'] as num? ?? 0).toDouble(),
       paymentMethod: json['paymentMethod'] as String? ?? 'PAY_AT_SALON',
+      paymentStatus: json['paymentStatus'] as String?,
       requiresClientConfirmation:
           json['requiresClientConfirmation'] as bool? ?? false,
       clientConfirmedAt: json['clientConfirmedAt'] as String?,
@@ -64,6 +68,8 @@ class Appointment extends Equatable {
   bool get isCompleted => status == 'COMPLETED' || status == 'completed';
   bool get isCancelled => status == 'CANCELLED' || status == 'cancelled';
   bool get isNoShow => status == 'NO_SHOW';
+  bool get isPaidByCard => paymentStatus == 'PAID';
+  bool get isRefunded => paymentStatus == 'REFUNDED';
   bool get needsAttendanceConfirmation =>
       requiresClientConfirmation && clientConfirmedAt == null && isConfirmed;
 
@@ -73,5 +79,5 @@ class Appointment extends Equatable {
 
   @override
   List<Object?> get props =>
-      [id, status, date, time, endTime, requiresClientConfirmation, clientConfirmedAt];
+      [id, status, date, time, endTime, paymentMethod, paymentStatus, requiresClientConfirmation, clientConfirmedAt];
 }

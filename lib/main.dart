@@ -13,7 +13,6 @@ import 'data/api/app_config.dart';
 import 'data/services/localization_service.dart';
 import 'data/repositories/api_repository.dart';
 import 'data/repositories/loomea_repository.dart';
-import 'data/repositories/mock_repository.dart';
 import 'data/services/notification_service.dart';
 import 'logic/blocs/auth/auth_bloc.dart';
 import 'logic/blocs/booking/booking_bloc.dart';
@@ -51,15 +50,12 @@ void main() async {
   final hasSeenPermissions = prefs.getBool('hasSeenPermissions') ?? false;
 
   // Session-only tokens (remember me = false) are cleared on cold start.
-  ApiClient? apiClient;
-  if (!AppConfig.useMockData) {
-    apiClient = ApiClient(baseUrl: AppConfig.apiBaseUrl);
-  }
+  final apiClient = ApiClient(baseUrl: AppConfig.apiBaseUrl);
 
   // Load locale strings and restore auth token in parallel.
   await Future.wait([
     AppLocalizations.instance.load(savedLanguage ?? 'en'),
-    if (apiClient != null) apiClient.restoreToken(),
+    apiClient.restoreToken(),
   ]);
 
   // Catch Flutter widget-build errors and show the branded full-screen
@@ -91,14 +87,14 @@ void main() async {
 }
 
 class LoomeaApp extends StatefulWidget {
-  final ApiClient? apiClient;
+  final ApiClient apiClient;
   final bool hasSeenOnboarding;
   final bool hasSelectedLanguage;
   final bool hasSeenPermissions;
 
   const LoomeaApp({
     super.key,
-    this.apiClient,
+    required this.apiClient,
     this.hasSeenOnboarding = false,
     this.hasSelectedLanguage = false,
     this.hasSeenPermissions = false,
@@ -120,11 +116,7 @@ class _LoomeaAppState extends State<LoomeaApp> {
     super.initState();
     AppLocalizations.instance.addListener(_onLocaleChanged);
     final apiClient = widget.apiClient;
-    if (AppConfig.useMockData || apiClient == null) {
-      _repository = MockRepository();
-    } else {
-      _repository = ApiRepository(client: apiClient);
-    }
+    _repository = ApiRepository(client: apiClient);
     _passwordResetBloc = PasswordResetBloc(repository: _repository);
     _router = createAppRouter(
       apiClient: apiClient,
@@ -184,8 +176,7 @@ class _LoomeaAppState extends State<LoomeaApp> {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<LoomeeaRepository>.value(value: _repository),
-        if (apiClient != null)
-          RepositoryProvider<ApiClient>.value(value: apiClient),
+        RepositoryProvider<ApiClient>.value(value: apiClient),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -238,14 +229,7 @@ class _LoomeaAppState extends State<LoomeaApp> {
             final textDirection = AppLocalizations.instance.isRtl
                 ? TextDirection.rtl
                 : TextDirection.ltr;
-            // No API client (mock mode) — just render normally.
             final client = apiClient;
-            if (client == null) {
-              return Directionality(
-                textDirection: textDirection,
-                child: content,
-              );
-            }
             return Directionality(
               textDirection: textDirection,
               child: ValueListenableBuilder<bool>(

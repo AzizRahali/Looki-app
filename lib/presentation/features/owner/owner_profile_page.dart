@@ -98,10 +98,21 @@ class OwnerProfilePage extends StatelessWidget {
               const SizedBox(height: 12),
               LoomeaSurfaceCard(
                 padding: EdgeInsets.zero,
-                child: _SettingsItem(
-                  icon: Icons.notifications_none_rounded,
-                  label: tr('notifications'),
-                  onTap: () => context.pushNamed(AppRoute.ownerNotifications.name),
+                child: Column(
+                  children: [
+                    _SettingsItem(
+                      icon: Icons.workspace_premium_outlined,
+                      label: tr('subscription'),
+                      onTap: () =>
+                          context.pushNamed(AppRoute.ownerSubscription.name),
+                    ),
+                    const Divider(height: 1, indent: 52),
+                    _SettingsItem(
+                      icon: Icons.notifications_none_rounded,
+                      label: tr('notifications'),
+                      onTap: () => context.pushNamed(AppRoute.ownerNotifications.name),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 28),
@@ -115,7 +126,7 @@ class OwnerProfilePage extends StatelessWidget {
                     _SettingsItem(
                       icon: Icons.help_outline_rounded,
                       label: tr('help_support'),
-                      onTap: () {},
+                      onTap: () => context.pushNamed(AppRoute.supportChat.name, extra: true),
                     ),
                     const Divider(height: 1, indent: 52),
                     _SettingsItem(

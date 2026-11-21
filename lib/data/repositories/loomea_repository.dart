@@ -3,16 +3,21 @@ import '../models/waitlist_model.dart';
 import '../models/category_model.dart';
 import '../models/owner_booking_model.dart';
 import '../models/owner_dashboard_model.dart';
+import '../models/owner_insights_model.dart';
 import '../models/owner_salon_model.dart';
+import '../models/payment_model.dart';
 import '../models/portfolio_model.dart';
 import '../models/profile_model.dart';
 import '../models/review_model.dart';
 import '../models/salon_model.dart';
+import '../models/smart_search_model.dart';
+import '../models/support_model.dart';
+import '../models/subscription_model.dart';
 import '../models/working_hours_model.dart';
 import '../models/service_catalog_model.dart';
 
 /// Abstract repository contract.
-/// Both [MockRepository] and [ApiRepository] implement this.
+/// Implemented by [ApiRepository].
 abstract class LoomeeaRepository {
   // --- Auth ---
 
@@ -78,6 +83,9 @@ abstract class LoomeeaRepository {
   Future<Salon?> getSalonByName(String name);
 
   Future<List<Salon>> searchSalons(String query);
+
+  /// Natural-language search; the backend may fall back to keyword search.
+  Future<SmartSearchResult> smartSearch(String query);
 
   Future<List<Salon>> searchAvailable({
     required String date,
@@ -162,6 +170,14 @@ abstract class LoomeeaRepository {
   // ─── Owner: Dashboard ───────────────────────────────────────────────
   Future<Dashboard> getOwnerDashboard(String salonId);
 
+  /// Business insights for the last 28 days; [language] is the app locale.
+  Future<OwnerInsights> getOwnerInsights(String salonId, String language);
+
+  // ─── Support assistant ─────────────────────────────────────────────
+  /// Sends the conversation so far (last message from the user) to the AI
+  /// support assistant; [language] is the app locale.
+  Future<SupportReply> askSupport(List<SupportMessage> messages, String language);
+
   // ─── Owner: Portfolio ───────────────────────────────────────────────
   Future<List<PortfolioPost>> getOwnerPortfolioPosts(String salonId);
   Future<PortfolioPost> addPortfolioPost(String salonId, Map<String, dynamic> data);
@@ -172,6 +188,35 @@ abstract class LoomeeaRepository {
   // ─── Owner: Working Hours ───────────────────────────────────────────
   Future<List<WorkingHoursModel>> getWorkingHours(String salonId);
   Future<List<WorkingHoursModel>> saveWorkingHours(String salonId, List<WorkingHoursModel> hours);
+
+  // ─── Payments (Stripe Checkout) ─────────────────────────────────────────
+
+  /// Creates the booking (PENDING, awaiting payment) and a Stripe Checkout
+  /// session for it. [startTime] is "HH:mm".
+  Future<PaymentCheckout> startBookingPayment({
+    required String salonId,
+    required String date,
+    required String startTime,
+    required List<String> serviceIds,
+    String? notes,
+  });
+
+  /// Creates a Stripe Checkout session for an owner subscription plan.
+  Future<PaymentCheckout> startSubscriptionPayment(String plan);
+
+  /// Asks the backend to re-check the payment with Stripe and fulfil it.
+  Future<PaymentStatusInfo> getPaymentStatus(String paymentRef);
+
+  /// Abandons an unpaid checkout and frees the booking's slot.
+  Future<PaymentStatusInfo> cancelPayment(String paymentRef);
+
+  Future<List<PaymentHistoryItem>> getPaymentHistory();
+
+  // ─── Owner: Subscription ─────────────────────────────────────────────────
+
+  /// The owner's most recent subscription, or null if they never had one.
+  Future<SubscriptionModel?> getSubscription();
+  Future<List<SubscriptionPlanModel>> getSubscriptionPlans();
 
   // ─── Waitlist ────────────────────────────────────────────────────────────
   Future<List<WaitlistEntry>> getMyWaitlist();

@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../data/services/localization_service.dart';
 
 import '../../../data/models/salon_model.dart';
+import '../../../data/models/smart_search_model.dart';
 import '../../core/utils/image_utils.dart';
 import '../../../logic/blocs/profile/profile_bloc.dart';
 import '../../../logic/blocs/profile/profile_event.dart';
@@ -151,6 +152,13 @@ class _SearchPageState extends State<SearchPage> {
     context.read<SearchBloc>().add(SearchSalons(_controller.text));
   }
 
+  void _runSmartSearch(BuildContext context) {
+    final query = _controller.text.trim();
+    if (query.isEmpty) return;
+    FocusScope.of(context).unfocus();
+    context.read<SearchBloc>().add(SmartSearch(query));
+  }
+
   void _onFilterTap(String label) {
     setState(() {
       switch (label) {
@@ -229,14 +237,30 @@ class _SearchPageState extends State<SearchPage> {
               child: TextField(
                 controller: _controller,
                 autofocus: true,
+                textInputAction: TextInputAction.search,
                 onChanged: (value) {
                   context.read<SearchBloc>().add(SearchSalons(value));
                 },
+                onSubmitted: (_) => _runSmartSearch(context),
                 decoration: InputDecoration(
                   prefixIcon: const Icon(Icons.search_rounded,
                       color: AppColors.textSecondary),
-                  hintText: tr('search_hint'),
+                  suffixIcon: IconButton(
+                    tooltip: tr('smart_search'),
+                    icon: const Icon(Icons.auto_awesome_rounded,
+                        color: AppColors.primary),
+                    onPressed: () => _runSmartSearch(context),
+                  ),
+                  hintText: tr('smart_search_hint'),
                 ),
+              ),
+            ),
+            BlocBuilder<SearchBloc, SearchState>(
+              builder: (context, searchState) => _SmartSearchSummary(
+                state: searchState,
+                onClear: () => context
+                    .read<SearchBloc>()
+                    .add(SearchSalons(_controller.text)),
               ),
             ),
             const SizedBox(height: LoomeaTokens.gapMd),
@@ -294,6 +318,24 @@ class _SearchPageState extends State<SearchPage> {
               child: BlocBuilder<SearchBloc, SearchState>(
                 builder: (context, state) {
                   if (state.status == SearchStatus.loading) {
+                    if (state.isSmartMode) {
+                      return Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const CircularProgressIndicator(),
+                            const SizedBox(height: LoomeaTokens.gapMd),
+                            Text(
+                              tr('smart_search_loading'),
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textSecondary,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
                     return const Center(child: CircularProgressIndicator());
                   }
                   if (state.results.isEmpty && state.status == SearchStatus.loaded) {
@@ -344,6 +386,117 @@ class _SearchPageState extends State<SearchPage> {
         ),
       ),
     );
+  }
+}
+
+class _SmartSearchSummary extends StatelessWidget {
+  const _SmartSearchSummary({required this.state, required this.onClear});
+
+  final SearchState state;
+  final VoidCallback onClear;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!state.isSmartMode || state.status != SearchStatus.loaded) {
+      return const SizedBox.shrink();
+    }
+    final filters = state.smartFilters;
+    if (!state.aiUsed || filters == null || filters.isEmpty) {
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(LoomeaTokens.screenPaddingH, 8,
+            LoomeaTokens.screenPaddingH, 0),
+        child: Text(
+          tr(state.aiUsed ? 'smart_search_no_filters' : 'smart_search_fallback'),
+          style: const TextStyle(fontSize: 12, color: AppColors.textSecondary),
+        ),
+      );
+    }
+
+    final chips = <(IconData, String)>[
+      if (filters.service != null || filters.category != null)
+        (Icons.spa_outlined, (filters.service ?? filters.category)!),
+      if (filters.location != null) (Icons.place_outlined, filters.location!),
+      if (filters.maxPrice != null)
+        (
+          Icons.payments_outlined,
+          tr('smart_filter_max_price', args: [formatPrice(filters.maxPrice!)])
+        ),
+      if (filters.date != null)
+        (Icons.event_outlined, _formatWhen(filters)),
+    ];
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(
+          LoomeaTokens.screenPaddingH, 10, LoomeaTokens.screenPaddingH, 0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 6),
+            child: Icon(Icons.auto_awesome_rounded,
+                size: 16, color: AppColors.primary),
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Wrap(
+              spacing: 6,
+              runSpacing: 6,
+              children: [
+                for (final (icon, label) in chips)
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: AppColors.surface,
+                      borderRadius:
+                          BorderRadius.circular(LoomeaTokens.radiusPill),
+                      border: Border.all(color: AppColors.border),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(icon, size: 14, color: AppColors.textSecondary),
+                        const SizedBox(width: 4),
+                        Text(
+                          label,
+                          style: const TextStyle(
+                            fontSize: 12,
+                            color: AppColors.textPrimary,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: onClear,
+            child: Text(tr('smart_search_clear')),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static String _formatWhen(SmartSearchFilters filters) {
+    final date = DateTime.tryParse(filters.date!);
+    final today = DateUtils.dateOnly(DateTime.now());
+    String day;
+    if (date == null) {
+      day = filters.date!;
+    } else if (date == today) {
+      day = tr('smart_today');
+    } else if (date == today.add(const Duration(days: 1))) {
+      day = tr('smart_tomorrow');
+    } else {
+      day =
+          '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}';
+    }
+    final from = filters.timeFrom;
+    final to = filters.timeTo;
+    if (from == null) return day;
+    return from == to ? '$day · $from' : '$day · $from–$to';
   }
 }
 

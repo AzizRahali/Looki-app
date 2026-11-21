@@ -26,6 +26,10 @@ import '../../features/auth/forgot_password_page.dart';
 import '../../features/auth/email_sent_page.dart';
 import '../../features/auth/new_password_page.dart';
 import '../../features/auth/reset_success_page.dart';
+import '../../features/support/support_chat_page.dart';
+import '../../features/payment/owner_subscription_page.dart';
+import '../../features/payment/payment_history_page.dart';
+import '../../features/payment/payment_page.dart';
 
 enum AppRoute {
   languageSelection,
@@ -50,6 +54,10 @@ enum AppRoute {
   emailSent,
   newPassword,
   resetSuccess,
+  supportChat,
+  payment,
+  paymentHistory,
+  ownerSubscription,
 }
 
 GoRouter createAppRouter({
@@ -218,6 +226,13 @@ GoRouter createAppRouter({
         ),
       ),
       GoRoute(
+        name: AppRoute.supportChat.name,
+        path: '/support',
+        pageBuilder: (context, state) => MaterialPage(
+          child: SupportChatPage(isOwner: state.extra as bool? ?? false),
+        ),
+      ),
+      GoRoute(
         name: AppRoute.forgotPassword.name,
         path: '/forgot-password',
         pageBuilder: (context, state) => const MaterialPage(
@@ -243,6 +258,29 @@ GoRouter createAppRouter({
         path: '/reset-success',
         pageBuilder: (context, state) => const MaterialPage(
           child: ResetSuccessPage(),
+        ),
+      ),
+      // extra: PaymentArgs. Pops with true once the payment succeeded.
+      GoRoute(
+        name: AppRoute.payment.name,
+        path: '/payment',
+        pageBuilder: (context, state) => MaterialPage(
+          child: PaymentPage(args: state.extra as PaymentArgs),
+        ),
+      ),
+      // extra: true for the owner's billing wording.
+      GoRoute(
+        name: AppRoute.paymentHistory.name,
+        path: '/payment-history',
+        pageBuilder: (context, state) => MaterialPage(
+          child: PaymentHistoryPage(billing: state.extra as bool? ?? false),
+        ),
+      ),
+      GoRoute(
+        name: AppRoute.ownerSubscription.name,
+        path: '/owner-subscription',
+        pageBuilder: (context, state) => const MaterialPage(
+          child: OwnerSubscriptionPage(),
         ),
       ),
     ],
