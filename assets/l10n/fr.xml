@@ -615,5 +615,58 @@ Pour toute question, contactez-nous à privacy@loomea.app</string>
   <string name="step_label_info">Infos salon</string>
   <string name="step_label_image">Image</string>
 
+  <!-- Payments (Stripe) & subscription -->
+  <string name="pay_at_salon_desc">Réglez sur place lors de votre rendez-vous</string>
+  <string name="pay_with_card_desc">Paiement sécurisé avec Stripe. Votre réservation est confirmée tout de suite.</string>
+  <string name="continue_to_payment">Continuer vers le paiement</string>
+  <string name="payment_title">Paiement</string>
+  <string name="payment_secure_note">Vous saisirez votre carte sur la page sécurisée de Stripe. looki ne voit jamais votre numéro de carte.</string>
+  <string name="payment_charged_as">Stripe prélèvera {0}</string>
+  <string name="payment_total">Total</string>
+  <string name="pay_amount">Payer {0}</string>
+  <string name="payment_preparing">Préparation du paiement sécurisé…</string>
+  <string name="payment_in_browser_title">Terminez le paiement dans votre navigateur</string>
+  <string name="payment_in_browser_desc">Stripe Checkout s&apos;est ouvert dans votre navigateur. Cet écran se met à jour tout seul une fois le paiement passé.</string>
+  <string name="payment_reopen">Rouvrir le paiement</string>
+  <string name="payment_cancel">Annuler le paiement</string>
+  <string name="payment_verifying">Confirmation de votre paiement…</string>
+  <string name="payment_success_title">Paiement réussi</string>
+  <string name="payment_success_booking">Votre réservation est confirmée.</string>
+  <string name="payment_success_subscription">Votre abonnement est actif.</string>
+  <string name="payment_cancelled_title">Paiement annulé</string>
+  <string name="payment_cancelled_desc">Aucun montant n&apos;a été prélevé.</string>
+  <string name="payment_refunded_title">Paiement remboursé</string>
+  <string name="payment_refunded_desc">Ce créneau a été pris avant que votre paiement n&apos;aboutisse : vous avez été remboursé intégralement. Choisissez un autre horaire.</string>
+  <string name="payment_failed_title">Le paiement n&apos;a pas abouti</string>
+  <string name="choose_another_time">Choisir un autre horaire</string>
+  <string name="continue_label">Continuer</string>
+  <string name="payment_history">Historique des paiements</string>
+  <string name="billing_history">Historique de facturation</string>
+  <string name="payment_history_empty">Aucun paiement pour l&apos;instant</string>
+  <string name="payment_history_empty_desc">Les paiements par carte de vos réservations apparaîtront ici.</string>
+  <string name="billing_history_empty_desc">Vos paiements d&apos;abonnement apparaîtront ici.</string>
+  <string name="payment_status_completed">Payé</string>
+  <string name="payment_status_refunded">Remboursé</string>
+  <string name="payment_status_failed">Échoué</string>
+  <string name="payment_status_awaiting">En attente de paiement</string>
+  <string name="paid_online">Payé en ligne</string>
+  <string name="subscription">Abonnement</string>
+  <string name="subscription_title">Votre abonnement looki</string>
+  <string name="subscription_subtitle">Gardez votre salon sur looki et gérez vos réservations avec un abonnement.</string>
+  <string name="subscription_active">Actif</string>
+  <string name="subscription_expired">Expiré</string>
+  <string name="subscription_none">Aucun abonnement actif</string>
+  <string name="subscription_valid_until">Valable jusqu&apos;au {0}</string>
+  <string name="subscription_days_left">{0} jours restants</string>
+  <string name="plan_monthly">Mensuel</string>
+  <string name="plan_yearly">Annuel</string>
+  <string name="per_month">/ mois</string>
+  <string name="per_year">/ an</string>
+  <string name="plan_save">Économisez {0} %</string>
+  <string name="choose_plan">Choisissez une formule</string>
+  <string name="subscribe_cta">S&apos;abonner</string>
+  <string name="extend_cta">Prolonger mon abonnement</string>
+  <string name="subscription_extend_note">Vos jours restants sont conservés : la nouvelle période commence à la fin de l&apos;actuelle.</string>
+
 </resources>
 

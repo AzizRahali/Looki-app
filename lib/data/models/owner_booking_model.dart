@@ -36,6 +36,8 @@ class OwnerBooking extends Equatable {
   final String endTime;
   final String status;
   final String paymentMethod;
+  /// AWAITING_PAYMENT | PAID | REFUNDED for card bookings, null otherwise.
+  final String? paymentStatus;
   final String notes;
   final double totalPrice;
   final List<BookingServiceItem> services;
@@ -55,6 +57,7 @@ class OwnerBooking extends Equatable {
     required this.endTime,
     required this.status,
     required this.paymentMethod,
+    this.paymentStatus,
     required this.notes,
     required this.totalPrice,
     required this.services,
@@ -76,6 +79,7 @@ class OwnerBooking extends Equatable {
       endTime: json['endTime'] as String? ?? '',
       status: json['status'] as String? ?? '',
       paymentMethod: json['paymentMethod'] as String? ?? '',
+      paymentStatus: json['paymentStatus'] as String?,
       notes: json['notes'] as String? ?? '',
       totalPrice: (json['totalPrice'] as num?)?.toDouble() ?? 0,
       services: (json['services'] as List?)
@@ -94,6 +98,8 @@ class OwnerBooking extends Equatable {
   bool get isConfirmed => status == 'CONFIRMED';
   bool get isCompleted => status == 'COMPLETED';
   bool get isCancelled => status == 'CANCELLED';
+  bool get isAwaitingPayment => paymentStatus == 'AWAITING_PAYMENT';
+  bool get isPaidOnline => paymentStatus == 'PAID';
   String get priceText => formatPrice(totalPrice);
   String get servicesText => services.map((s) => s.serviceName).join(', ');
   String get timeRange {
@@ -102,5 +108,5 @@ class OwnerBooking extends Equatable {
   }
 
   @override
-  List<Object?> get props => [id, status, date, startTime, endTime, clientName, reliabilityScore, reliabilityTier, clientPhone, clientAvatarUrl];
+  List<Object?> get props => [id, status, paymentStatus, date, startTime, endTime, clientName, reliabilityScore, reliabilityTier, clientPhone, clientAvatarUrl];
 }

@@ -265,6 +265,12 @@ class ProfilePage extends StatelessWidget {
                     onTap: () =>
                         context.pushNamed(AppRoute.favoriteSalons.name),
                   ),
+                  _SettingsItem(
+                    icon: Icons.receipt_long_outlined,
+                    label: tr('payment_history'),
+                    onTap: () =>
+                        context.pushNamed(AppRoute.paymentHistory.name),
+                  ),
                   const _BiometricToggle(),
                 ],
               ),

@@ -374,9 +374,15 @@ class _BookingCard extends StatelessWidget {
                       icon: booking.paymentMethod == 'PAY_WITH_CARD'
                           ? Icons.credit_card_rounded
                           : Icons.payments_outlined,
-                      text: booking.paymentMethod == 'PAY_WITH_CARD'
-                          ? 'Card'
-                          : 'On-site',
+                      text: booking.isPaidOnline
+                          ? tr('paid_online')
+                          : booking.isAwaitingPayment
+                              ? tr('payment_status_awaiting')
+                              : booking.paymentStatus == 'REFUNDED'
+                                  ? tr('payment_status_refunded')
+                                  : booking.paymentMethod == 'PAY_WITH_CARD'
+                                      ? 'Card'
+                                      : 'On-site',
                     ),
                     const Spacer(),
                     _ReliabilityBadge(
@@ -441,11 +447,14 @@ class _BookingCard extends StatelessWidget {
                   Expanded(
                     flex: 2,
                     child: ElevatedButton(
-                      onPressed: () => context.read<OwnerBookingBloc>().add(
-                            booking.isConfirmed
-                                ? CompleteBooking(booking.id)
-                                : ConfirmBooking(booking.id),
-                          ),
+                      // Card bookings confirm themselves once Stripe reports the payment
+                      onPressed: booking.isPending && booking.isAwaitingPayment
+                          ? null
+                          : () => context.read<OwnerBookingBloc>().add(
+                                booking.isConfirmed
+                                    ? CompleteBooking(booking.id)
+                                    : ConfirmBooking(booking.id),
+                              ),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(0, 46),
                         shape: RoundedRectangleBorder(

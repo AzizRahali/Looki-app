@@ -615,5 +615,58 @@ For privacy-related inquiries, contact us at privacy@loomea.app</string>
   <string name="step_label_info">Salon Info</string>
   <string name="step_label_image">Image</string>
 
+  <!-- Payments (Stripe) & subscription -->
+  <string name="pay_at_salon_desc">Pay in person at your appointment</string>
+  <string name="pay_with_card_desc">Secure payment with Stripe. Your booking is confirmed right away.</string>
+  <string name="continue_to_payment">Continue to payment</string>
+  <string name="payment_title">Payment</string>
+  <string name="payment_secure_note">You&apos;ll enter your card on Stripe&apos;s secure page. looki never sees your card number.</string>
+  <string name="payment_charged_as">Stripe will charge {0}</string>
+  <string name="payment_total">Total</string>
+  <string name="pay_amount">Pay {0}</string>
+  <string name="payment_preparing">Preparing secure checkout…</string>
+  <string name="payment_in_browser_title">Finish paying in your browser</string>
+  <string name="payment_in_browser_desc">Stripe Checkout opened in your browser. This screen updates by itself once the payment goes through.</string>
+  <string name="payment_reopen">Open checkout again</string>
+  <string name="payment_cancel">Cancel payment</string>
+  <string name="payment_verifying">Confirming your payment…</string>
+  <string name="payment_success_title">Payment successful</string>
+  <string name="payment_success_booking">Your booking is confirmed.</string>
+  <string name="payment_success_subscription">Your subscription is active.</string>
+  <string name="payment_cancelled_title">Payment cancelled</string>
+  <string name="payment_cancelled_desc">No money was taken.</string>
+  <string name="payment_refunded_title">Payment refunded</string>
+  <string name="payment_refunded_desc">That time slot was taken before your payment came through, so you&apos;ve been refunded in full. Please pick another time.</string>
+  <string name="payment_failed_title">Payment didn&apos;t go through</string>
+  <string name="choose_another_time">Choose another time</string>
+  <string name="continue_label">Continue</string>
+  <string name="payment_history">Payment history</string>
+  <string name="billing_history">Billing history</string>
+  <string name="payment_history_empty">No payments yet</string>
+  <string name="payment_history_empty_desc">Card payments for your bookings will show up here.</string>
+  <string name="billing_history_empty_desc">Your subscription payments will show up here.</string>
+  <string name="payment_status_completed">Paid</string>
+  <string name="payment_status_refunded">Refunded</string>
+  <string name="payment_status_failed">Failed</string>
+  <string name="payment_status_awaiting">Awaiting payment</string>
+  <string name="paid_online">Paid online</string>
+  <string name="subscription">Subscription</string>
+  <string name="subscription_title">Your looki plan</string>
+  <string name="subscription_subtitle">Keep your salon on looki and manage your bookings with a subscription.</string>
+  <string name="subscription_active">Active</string>
+  <string name="subscription_expired">Expired</string>
+  <string name="subscription_none">No active plan</string>
+  <string name="subscription_valid_until">Valid until {0}</string>
+  <string name="subscription_days_left">{0} days left</string>
+  <string name="plan_monthly">Monthly</string>
+  <string name="plan_yearly">Yearly</string>
+  <string name="per_month">/ month</string>
+  <string name="per_year">/ year</string>
+  <string name="plan_save">Save {0}%</string>
+  <string name="choose_plan">Choose a plan</string>
+  <string name="subscribe_cta">Subscribe</string>
+  <string name="extend_cta">Extend my plan</string>
+  <string name="subscription_extend_note">Your remaining days are kept — the new period starts when the current one ends.</string>
+
 </resources>
 
