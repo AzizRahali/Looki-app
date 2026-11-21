@@ -19,3 +19,12 @@ class RefreshDashboard extends OwnerDashboardEvent {
   @override
   List<Object?> get props => [salonId];
 }
+
+/// Loads business insights; may be slow when the AI model is starting up.
+class LoadInsights extends OwnerDashboardEvent {
+  final String salonId;
+  final String language;
+  const LoadInsights(this.salonId, this.language);
+  @override
+  List<Object?> get props => [salonId, language];
+}

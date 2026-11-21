@@ -26,6 +26,7 @@ import '../../features/auth/forgot_password_page.dart';
 import '../../features/auth/email_sent_page.dart';
 import '../../features/auth/new_password_page.dart';
 import '../../features/auth/reset_success_page.dart';
+import '../../features/support/support_chat_page.dart';
 import '../../features/payment/owner_subscription_page.dart';
 import '../../features/payment/payment_history_page.dart';
 import '../../features/payment/payment_page.dart';
@@ -53,6 +54,7 @@ enum AppRoute {
   emailSent,
   newPassword,
   resetSuccess,
+  supportChat,
   payment,
   paymentHistory,
   ownerSubscription,
@@ -221,6 +223,13 @@ GoRouter createAppRouter({
         path: '/owner-notifications',
         pageBuilder: (context, state) => const MaterialPage(
           child: OwnerNotificationsPage(),
+        ),
+      ),
+      GoRoute(
+        name: AppRoute.supportChat.name,
+        path: '/support',
+        pageBuilder: (context, state) => MaterialPage(
+          child: SupportChatPage(isOwner: state.extra as bool? ?? false),
         ),
       ),
       GoRoute(

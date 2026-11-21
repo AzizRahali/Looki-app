@@ -281,7 +281,7 @@ class ProfilePage extends StatelessWidget {
                   _SettingsItem(
                     icon: Icons.help_outline_rounded,
                     label: tr('help_center'),
-                    onTap: () => _showInfoSheet(context, tr('help_center'), tr('help_center_content')),
+                    onTap: () => context.pushNamed(AppRoute.supportChat.name, extra: false),
                   ),
                   _SettingsItem(
                     icon: Icons.description_outlined,

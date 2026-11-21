@@ -3,12 +3,15 @@ import '../models/waitlist_model.dart';
 import '../models/category_model.dart';
 import '../models/owner_booking_model.dart';
 import '../models/owner_dashboard_model.dart';
+import '../models/owner_insights_model.dart';
 import '../models/owner_salon_model.dart';
 import '../models/payment_model.dart';
 import '../models/portfolio_model.dart';
 import '../models/profile_model.dart';
 import '../models/review_model.dart';
 import '../models/salon_model.dart';
+import '../models/smart_search_model.dart';
+import '../models/support_model.dart';
 import '../models/subscription_model.dart';
 import '../models/working_hours_model.dart';
 import '../models/service_catalog_model.dart';
@@ -80,6 +83,9 @@ abstract class LoomeeaRepository {
   Future<Salon?> getSalonByName(String name);
 
   Future<List<Salon>> searchSalons(String query);
+
+  /// Natural-language search; the backend may fall back to keyword search.
+  Future<SmartSearchResult> smartSearch(String query);
 
   Future<List<Salon>> searchAvailable({
     required String date,
@@ -163,6 +169,14 @@ abstract class LoomeeaRepository {
 
   // ─── Owner: Dashboard ───────────────────────────────────────────────
   Future<Dashboard> getOwnerDashboard(String salonId);
+
+  /// Business insights for the last 28 days; [language] is the app locale.
+  Future<OwnerInsights> getOwnerInsights(String salonId, String language);
+
+  // ─── Support assistant ─────────────────────────────────────────────
+  /// Sends the conversation so far (last message from the user) to the AI
+  /// support assistant; [language] is the app locale.
+  Future<SupportReply> askSupport(List<SupportMessage> messages, String language);
 
   // ─── Owner: Portfolio ───────────────────────────────────────────────
   Future<List<PortfolioPost>> getOwnerPortfolioPosts(String salonId);

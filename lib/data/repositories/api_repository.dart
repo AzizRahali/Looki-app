@@ -3,6 +3,7 @@ import '../models/appointment_model.dart';
 import '../models/category_model.dart';
 import '../models/owner_booking_model.dart';
 import '../models/owner_dashboard_model.dart';
+import '../models/owner_insights_model.dart';
 import '../models/owner_salon_model.dart';
 import '../models/payment_model.dart';
 import '../models/portfolio_model.dart';
@@ -11,6 +12,8 @@ import '../models/review_model.dart';
 import '../models/salon_model.dart';
 import '../models/subscription_model.dart';
 import '../models/service_model.dart';
+import '../models/smart_search_model.dart';
+import '../models/support_model.dart';
 import '../models/waitlist_model.dart';
 import '../models/working_hours_model.dart';
 import '../models/service_catalog_model.dart';
@@ -215,6 +218,21 @@ class ApiRepository implements LoomeeaRepository {
         await _client.get('/api/search', queryParams: {'q': query});
     final data = response['data'] as List;
     return data.map((s) => _mapApiSalon(s as Map<String, dynamic>)).toList();
+  }
+
+  @override
+  Future<SmartSearchResult> smartSearch(String query) async {
+    final response =
+        await _client.get('/api/search/smart', queryParams: {'q': query});
+    final data = response['data'] as Map<String, dynamic>;
+    final filters = data['filters'] as Map<String, dynamic>?;
+    return SmartSearchResult(
+      salons: (data['salons'] as List? ?? [])
+          .map((s) => _mapApiSalon(s as Map<String, dynamic>))
+          .toList(),
+      aiUsed: data['aiUsed'] as bool? ?? false,
+      filters: filters == null ? null : SmartSearchFilters.fromJson(filters),
+    );
   }
 
   @override
@@ -567,6 +585,23 @@ class ApiRepository implements LoomeeaRepository {
     final response =
         await _client.get('/api/owner/salons/$salonId/dashboard');
     return Dashboard.fromJson(response['data'] as Map<String, dynamic>);
+  }
+
+  @override
+  Future<OwnerInsights> getOwnerInsights(String salonId, String language) async {
+    final response = await _client.get('/api/owner/salons/$salonId/insights',
+        queryParams: {'lang': language});
+    return OwnerInsights.fromJson(response['data'] as Map<String, dynamic>);
+  }
+
+  @override
+  Future<SupportReply> askSupport(
+      List<SupportMessage> messages, String language) async {
+    final response = await _client.post('/api/support/chat', body: {
+      'language': language,
+      'messages': messages.map((m) => m.toJson()).toList(),
+    });
+    return SupportReply.fromJson(response['data'] as Map<String, dynamic>);
   }
 
   // ─── Owner: Portfolio ───────────────────────────────────────────────
