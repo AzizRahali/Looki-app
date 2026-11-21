@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import '../models/owner_booking_model.dart';
 
@@ -58,6 +59,7 @@ class NotificationService {
   );
 
   Future<void> initialize() async {
+    if (kIsWeb) return;
     const androidSettings = AndroidInitializationSettings('@mipmap/ic_launcher');
     const iosSettings = DarwinInitializationSettings(
       requestAlertPermission: true,
@@ -71,6 +73,7 @@ class NotificationService {
   }
 
   Future<void> requestPermissions() async {
+    if (kIsWeb) return;
     await _plugin
         .resolvePlatformSpecificImplementation<
             AndroidFlutterLocalNotificationsPlugin>()
@@ -82,6 +85,7 @@ class NotificationService {
   }
 
   Future<void> showNewBooking(OwnerBooking booking) async {
+    if (kIsWeb) return;
     await _plugin.show(
       booking.id.hashCode & 0x7FFFFFFF,
       'New Booking!',
@@ -92,6 +96,7 @@ class NotificationService {
   }
 
   Future<void> showBookingStatusChange(String salonName, String newStatus) async {
+    if (kIsWeb) return;
     final (title, body) = switch (newStatus.toUpperCase()) {
       'CONFIRMED' => ('Booking Confirmed ✓', 'Your appointment at $salonName has been confirmed'),
       'CANCELLED' => ('Booking Cancelled', 'Your appointment at $salonName was cancelled'),
@@ -109,6 +114,7 @@ class NotificationService {
   }
 
   Future<void> showRescheduledByClient(String clientName, String timeRange) async {
+    if (kIsWeb) return;
     await _plugin.show(
       clientName.hashCode & 0x7FFFFFFF,
       'Reschedule Request',
@@ -119,6 +125,7 @@ class NotificationService {
   }
 
   Future<void> showWaitlistAvailable(String salonName, String date) async {
+    if (kIsWeb) return;
     await _plugin.show(
       'waitlist_$salonName'.hashCode & 0x7FFFFFFF,
       'Slot Available!',
@@ -129,6 +136,7 @@ class NotificationService {
   }
 
   Future<void> showBookingReminder(String salonName, String time) async {
+    if (kIsWeb) return;
     await _plugin.show(
       'reminder_$salonName'.hashCode & 0x7FFFFFFF,
       'Upcoming Appointment',
@@ -139,6 +147,7 @@ class NotificationService {
   }
 
   Future<void> showNewReview(String reviewerName, double rating) async {
+    if (kIsWeb) return;
     await _plugin.show(
       reviewerName.hashCode & 0x7FFFFFFF,
       'New Review ⭐',
